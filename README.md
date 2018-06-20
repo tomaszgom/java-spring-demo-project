@@ -1,11 +1,10 @@
 # Java Spring Demo Project by Tomasz Gomoradzki
 
-(application is in development phase but available for the review)
+(application is in development phase but available for review)
 
-Java Spring Demo Project is web application and should be considered as demo, portfolio project.
-It is based on Spring framework, concepts of CRUD (Create, Read, Update, Delete), Model View Controller and works with Oracle Database. Application allows to store and modify client's data.
+Java Spring Demo Project is web application and should be considered as demo, part of the programming portfolio. It is based on Spring framework, concepts of CRUD (Create, Read, Update, Delete), Model View Controller and works with Oracle Database. Application allows to store and modify client's data.
 
-Application has been developed with Eclipse Java EE IDE Oxygen v. 4.7, uses Java 8. Please find below some more information on implemented technologies.
+Application has been developed with Eclipse Java EE IDE Oxygen v. 4.7 and Java 8. Please find below some more information on implemented technologies.
 
 Technologies used:
 
