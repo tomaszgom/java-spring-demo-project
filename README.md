@@ -1,6 +1,6 @@
 # Java Spring Demo Project by Tomasz Gomoradzki
 
-(application is in development phase but available for review)
+Application is in development phase but is available for review and runs successfully on server once correctly implemented with database.
 
 Java Spring Demo Project is web application and should be considered as demo, part of the programming portfolio. It is based on Spring framework, concepts of CRUD (Create, Read, Update, Delete), Model View Controller and works with Oracle Database. Application allows to store and modify client's data.
 
@@ -12,10 +12,12 @@ Technologies used:
 - Spring Framework Release 5.0.1.
 - Hibernate Release 5.2.12.
 - Apache Tomcat 8.0 Application Server
-- Oracle Database XE 11.2
 - CSS
 - JSP
 - XML
+- Oracle Database XE 11.2 - SQl DDL code necessary to re-create the database with all components (Tables, sequences, triggers) is 	availabe in below project directory:
+	JavaSpringDemoProject\WebContent\resources\sql\fullDatabaseExport.sql
+
 
 Some of the concepts used:
 
@@ -28,4 +30,5 @@ Some of the concepts used:
 - Service Layer between Controller and DAO (Facade Design pattern) (Intermediate layer for business logic, can be used to   	integrate data for multiple sources)
 - DAO Data Access Object
 - Hibernate Object Class
+
 

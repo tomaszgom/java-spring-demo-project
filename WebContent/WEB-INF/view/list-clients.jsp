@@ -44,7 +44,6 @@
 						<td> ${tempClient.firstName} </td>
 						<td> ${tempClient.lastName} </td>
 						<td> ${tempClient.city} </td>
-						<td> ${tempClient.Client_id} </td>
 					</tr>
 				
 				</c:forEach>						
