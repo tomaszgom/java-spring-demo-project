@@ -18,7 +18,7 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator="entity_seq_gen")
 	@SequenceGenerator(name="entity_seq_gen", sequenceName="hr.CLIENT_SEQ")
 	@Column(name="CLIENT_ID")
-	private int Client_id;
+	private int client_id;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -38,18 +38,18 @@ public class Client {
 	
 	@Override
 	public String toString() {
-		return "Client [Client_id=" + Client_id + ", firstName=" + firstName + ", lastName=" + lastName + ", city="
+		return "Client [Client_id=" + client_id + ", firstName=" + firstName + ", lastName=" + lastName + ", city="
 				+ city + ", points=" + points + ", lastLoginDate=" + lastLoginDate + "]";
 	}
 
 
 	public int getClient_id() {
-		return Client_id;
+		return client_id;
 	}
 
 
-	public void setClient_id(int client_id) {
-		Client_id = client_id;
+	public void setClient_id(int cl_id) {
+		client_id = cl_id;
 	}
 
 

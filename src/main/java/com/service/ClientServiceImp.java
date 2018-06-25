@@ -32,4 +32,11 @@ public class ClientServiceImp implements ClientService {
 		
 	}
 
+
+	@Override
+	@Transactional
+	public Client getClient(int clientId) {
+		return clientDAO.getClient(clientId);
+	}
+
 }

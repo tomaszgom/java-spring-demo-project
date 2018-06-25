@@ -22,16 +22,15 @@ public class ClientDAOImp implements ClientDAO {
 	
 	
 	
-	@Override //in simplier version, without Service layer @Transactional could be annotated here
+	@Override //in simpler version, without Service layer @Transactional could be annotated here
 	public List<Client> getClients() {
 		
 		//get current Hibernate session (object from hibernate package)
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		//create a query
+		//create a query, execute and get result list
 		Query<Client> theQuery = currentSession.createQuery("from Client", Client.class);
-		
-		//execute query and get result list
+	
 		List<Client> clients = theQuery.getResultList();
 		
 		//return the results
@@ -41,13 +40,23 @@ public class ClientDAOImp implements ClientDAO {
 
 
 	@Override
-	public void saveClient(Client theClient) {
-		
-		// get Hibernate session
+	public void saveClient(Client theClient) {	
+		// get Hibernate session and save client
 		Session currentSession = sessionFactory.getCurrentSession();
-			
-		// save client
-		currentSession.save(theClient);
+		// saved data as new record
+		currentSession.update(theClient);
+		
+		// hibernate checks if this is new object by checking if ID is empty, if so it will insert else it will update
+		//currentSession.saveOrUpdate(theClient);
+	}
+
+
+	@Override
+	public Client getClient(int clientId) {
+		//get current session and read from database
+		Session currSession = sessionFactory.getCurrentSession();
+		Client theClient = currSession.get(Client.class, clientId);
+		return theClient;
 	}
 
 }
