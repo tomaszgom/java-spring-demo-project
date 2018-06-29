@@ -29,15 +29,28 @@
 			onclick="window.location.href='formAddClient'; return false;"
 			class="add-button"
 		/>
+		<input type="button" value="Show statistics"
+			onclick="window.location.href='formAddClient'; return false;"
+			class="add-button"
+		/>
+		<input type="button" value="Help"
+			onclick="window.location.href='formAddClient'; return false;"
+			class="add-button"
+		/>
+		<input type="button" value="Exit"
+			onclick="window.location.href='formAddClient'; return false;"
+			class="add-button"
+		/>
 		
 			<!--  add our html table here -->		
 			<table>
-				<tr>
+				<tr>				
+					<th>[...]</th>
+					<th>[...]</th>
 					<th>ID</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>City</th>
-					<th>[...]</th>
 				</tr>			
 				<!-- loop over and print our clients 'clients' is the attribute name from MVC Model -->
 				<c:forEach var="tempClient" items="${clients}">	
@@ -47,14 +60,17 @@
 					</c:url>
 					
 					
-					<tr>
+					<tr>				
+						<td> 
+						<a href="${modifyLink}">[Edit]</a>
+						 </td>
+						 <td> 
+						<a href="${modifyLink}">[Delete]</a>
+						 </td>					
 						<td> ${tempClient.client_id} </td>					
 						<td> ${tempClient.firstName} </td>
 						<td> ${tempClient.lastName} </td>
 						<td> ${tempClient.city} </td>
-						<td> 
-						<a href="${modifyLink}">[Edit]</a>
-						 </td>
 					</tr>
 				
 				</c:forEach>						
