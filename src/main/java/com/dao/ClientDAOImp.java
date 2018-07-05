@@ -37,8 +37,6 @@ public class ClientDAOImp implements ClientDAO {
 		return clients;
 	}
 
-
-
 	@Override
 	public void saveClient(Client theClient) {	
 		// get Hibernate session and save client
@@ -57,6 +55,16 @@ public class ClientDAOImp implements ClientDAO {
 		Session currSession = sessionFactory.getCurrentSession();
 		Client theClient = currSession.get(Client.class, clientId);
 		return theClient;
+	}
+
+	@Override
+	public void deleteClient(int clientId) {
+		//get session, create query to delete object and exec
+		Session currSession = sessionFactory.getCurrentSession();
+		Query theQuery = currSession.createQuery("delete from Client where client_id=:cliID");
+		theQuery.setParameter("cliID", clientId);
+		theQuery.executeUpdate();
+		
 	}
 
 }

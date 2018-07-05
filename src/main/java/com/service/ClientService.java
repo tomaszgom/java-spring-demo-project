@@ -10,4 +10,6 @@ public interface ClientService {
 	public void saveClient(Client theClient);
 
 	public Client getClient(int clientId);
+
+	public void deleteClient(int clientId);
 }

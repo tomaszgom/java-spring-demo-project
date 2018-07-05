@@ -82,4 +82,10 @@ public class ClientController {
 		return "client-form";
 	}
 	
+	@GetMapping("/delete")
+	public String deleteClient(@RequestParam("clientId") int clientId) {
+		
+		clientService.deleteClient(clientId);
+		return "redirect:/client/list";
+	}
 }

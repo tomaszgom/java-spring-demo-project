@@ -47,7 +47,7 @@
 				<tr>				
 					<th>[...]</th>
 					<th>[...]</th>
-					<th>ID</th>
+					<th>Client ID</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>City</th>
@@ -59,13 +59,19 @@
 						<c:param name="clientId" value="${tempClient.client_id}"/>
 					</c:url>
 					
+					<c:url var="deleteLink" value="/client/delete">
+						<c:param name="clientId" value="${tempClient.client_id}"/>
+					</c:url>
+					
 					
 					<tr>				
 						<td> 
 						<a href="${modifyLink}">[Edit]</a>
 						 </td>
 						 <td> 
-						<a href="${modifyLink}">[Delete]</a>
+						<a href="${deleteLink}"
+						onclick="if(!(confirm('Are you sure you want to delete the client?'))) return false">[Delete]
+						</a>
 						 </td>					
 						<td> ${tempClient.client_id} </td>					
 						<td> ${tempClient.firstName} </td>
