@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +9,7 @@
 	<!-- linking CSS; '${pageContext.request.contextPath}' is the name of the app-->
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/style.css" />
+		  href="${pageContext.request.contextPath}/resources/css/mainStyle.css" />
 </head>
 
 <body>
@@ -38,19 +39,27 @@
 			class="add-button"
 		/>
 		<input type="button" value="Exit"
-			onclick="window.location.href='formAddClient'; return false;"
+			onclick="window.location.href='goodbye'; return false;"
 			class="add-button"
 		/>
+		
+		<div>	
+		            <!--  search box -->
+            <form:form action="search" method="POST">
+                Search by name: <input type="text" name="srchName" />               
+                <input type="submit" value="Search" class="add-button" />
+            </form:form>
+		</div>		
 		
 			<!--  add our html table here -->		
 			<table>
 				<tr>				
-					<th>[...]</th>
-					<th>[...]</th>
+					<th>[Edit]</th>
 					<th>Client ID</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>City</th>
+					<th>[Delete]</th>					
 				</tr>			
 				<!-- loop over and print our clients 'clients' is the attribute name from MVC Model -->
 				<c:forEach var="tempClient" items="${clients}">	
@@ -66,22 +75,22 @@
 					
 					<tr>				
 						<td> 
-						<a href="${modifyLink}">[Edit]</a>
+						<a href="${modifyLink}">[...]</a>
 						 </td>
-						 <td> 
-						<a href="${deleteLink}"
-						onclick="if(!(confirm('Are you sure you want to delete the client?'))) return false">[Delete]
-						</a>
-						 </td>					
 						<td> ${tempClient.client_id} </td>					
 						<td> ${tempClient.firstName} </td>
 						<td> ${tempClient.lastName} </td>
 						<td> ${tempClient.city} </td>
+						 <td> 
+						<a href="${deleteLink}"
+						onclick="if(!(confirm('Are you sure you want to delete the client?'))) return false">[X]
+						</a>
+						 </td>					
 					</tr>
 				
 				</c:forEach>						
 			</table>				
-		</div>	
+		</div>
 	</div>
 </body>
 </html>

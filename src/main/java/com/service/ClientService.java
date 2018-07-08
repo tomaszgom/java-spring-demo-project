@@ -12,4 +12,7 @@ public interface ClientService {
 	public Client getClient(int clientId);
 
 	public void deleteClient(int clientId);
+
+	public List<Client> searchClients(String srchName);
+
 }

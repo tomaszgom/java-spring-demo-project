@@ -18,18 +18,16 @@ public class ClientServiceImp implements ClientService {
 	
 	
 	@Override
-	@Transactional // service layer will define the beginning and end of trnsaction
+	@Transactional // service layer will define the beginning and end of transaction
 	public List<Client> getClients() {
 		//delegating the get request to DAO
 		return clientDAO.getClients();
 	}
 
-
 	@Override
 	@Transactional
 	public void saveClient(Client theClient) {
-		clientDAO.saveClient(theClient);
-		
+		clientDAO.saveClient(theClient);		
 	}
 
 	@Override
@@ -41,8 +39,16 @@ public class ClientServiceImp implements ClientService {
 	@Override
 	@Transactional
 	public void deleteClient(int clientId) {
-		clientDAO.deleteClient(clientId);
-		
+		clientDAO.deleteClient(clientId);	
 	}
+
+	@Override
+	@Transactional
+	public List<Client> searchClients(String srchName) {
+		return clientDAO.searchClients(srchName);
+	}
+
+
+
 
 }

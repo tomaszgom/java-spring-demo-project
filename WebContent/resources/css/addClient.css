@@ -2,7 +2,9 @@ form {
 	margin-top: 10px;
 }
 #header {width: 70%; background: #3209c3; margin-top: 0px; padding:9px 0px 9px 9px;}
-#header0 {width: 70%; background: #cccccc; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;}
+#header0 {width: 70%; background: #cccccc; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
+background-image: url('../../resources/images/blueBkGnd.jpg');
+color: white; text-align: center; font-size: 12px; font-weight: bold;}
 #header2 {width: 70%; background: #3209c3; margin-top: 0px; padding:9px 0px 9px 9px;}
 
 label {

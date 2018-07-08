@@ -67,10 +67,28 @@ public class ClientDAOImp implements ClientDAO {
 		
 	}
 
+	@Override
+	public List<Client> searchClients(String srchName) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query theQuery = null;
+		
+        	// if name is not empty
+        if (srchName != null && srchName.trim().length() > 0) {
+            	// search by firstName or lastName
+            theQuery =currentSession.createQuery("from Client where lower(firstName) like :theName or lower(lastName) like :theName", Client.class);
+            theQuery.setParameter("theName", "%" + srchName.toLowerCase() + "%");          
+        }else {
+            theQuery =currentSession.createQuery("from Client", Client.class);            
+        }
+        
+        List<Client> clientsResult = theQuery.getResultList();       
+        return clientsResult;
+	}
+
 }
 
 
-/* NOTES
+/* Dev Notes, Please ignore
  * 
  * Annotations for DAO Data Access Object
  * @Component - component scanning for Java beans

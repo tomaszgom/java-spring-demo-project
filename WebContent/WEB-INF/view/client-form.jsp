@@ -5,10 +5,10 @@
 	<title>Save Client</title>
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/style.css">
+		  href="${pageContext.request.contextPath}/resources/css/mainStyle.css">
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add-client-style.css">
+		  href="${pageContext.request.contextPath}/resources/css/addClient.css">
 </head>
 <body>
 	<div id="wrapper">

@@ -19,6 +19,17 @@ import com.service.ClientService;
 @RequestMapping("/client")
 public class ClientController {
 
+	
+	@GetMapping("/welcome")
+	public String welcomeView (Model theModel) {
+		return "welcome";
+	}
+	@GetMapping("/goodbye")
+	public String goodyeView (Model theModel) {
+		return "goodbye";
+	}
+	
+	
 	//* inject the DAO Client, this section - injecting DAO directly,
 	//* would be uncommented if we would not use service layer
 	//@Autowired
@@ -30,7 +41,6 @@ public class ClientController {
 	
 	@GetMapping("/list") 	//Get handles only GET requests, @RequestMapping handles all
 	public String listClients(Model theModel) {
-		
 		
 		//* get clients from the dao - would be used if Service was not in place
 		//List<Client> theClients = clientDAO.getClients();
@@ -71,6 +81,14 @@ public class ClientController {
 		clientService.saveClient(theClient);	
 		return "redirect:/client/list";
 	}
+		
+	@PostMapping("/search")
+    public String searchClient(@RequestParam("srchName") String srchName, Model theModel) {
+
+        List<Client> theClients = clientService.searchClients(srchName);
+        theModel.addAttribute("clients", theClients);
+        return "list-clients";        
+    }
 	
 	@GetMapping("/formEditClient")
 	public String formEditClient(@RequestParam("clientId") int clientId, Model theModel) {
