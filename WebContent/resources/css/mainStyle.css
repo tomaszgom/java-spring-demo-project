@@ -13,7 +13,7 @@ table {
  
 th {
  	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #3209c3;
+	background:none repeat scroll 0 0 #696969;
 	padding:10px;
 	color: #FFFFFF; 
 }
@@ -27,7 +27,7 @@ tr:nth-child(even) {background: #FFFFFF}
 /* tr:nth-child(odd) {background: #BBBBBB}	 */ 
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background: #3209c3; margin-top: 0px; padding:9px 0px 9px 9px;}
+#header {width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
 #header0 {width: 70%; background: #cccccc; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
 color: white; text-align: center;
 font-size: 12px; font-weight: bold;

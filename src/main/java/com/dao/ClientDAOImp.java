@@ -16,36 +16,38 @@ import com.entity.Client;
 @Repository
 public class ClientDAOImp implements ClientDAO {
 
-	//--Injection of session factory
+	 //  Injection of session factory
 	@Autowired
 	private SessionFactory sessionFactory;					   
-	
 	
 	
 	@Override //in simpler version, without Service layer @Transactional could be annotated here
 	public List<Client> getClients() {
 		
-		//get current Hibernate session (object from hibernate package)
+		  //  Get current Hibernate session (object from hibernate package)
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		//create a query, execute and get result list
+		  //  create a query, execute and get result list
 		Query<Client> theQuery = currentSession.createQuery("from Client", Client.class);
 	
 		List<Client> clients = theQuery.getResultList();
-		
-		//return the results
+		  //  return the results
 		return clients;
 	}
 
 	@Override
 	public void saveClient(Client theClient) {	
-		// get Hibernate session and save client
+		  // get Hibernate session and save client
 		Session currentSession = sessionFactory.getCurrentSession();
+		
+		if(theClient.getClient_id() == 0) {
+			//  Hibernate checks if this is new object by checking if ID is empty, if so it will insert else it will update
+			//  currentSession.saveOrUpdate(theClient);
+			currentSession.save(theClient);	
+		}else{
 		// saved data as new record
 		currentSession.update(theClient);
-		
-		// hibernate checks if this is new object by checking if ID is empty, if so it will insert else it will update
-		//currentSession.saveOrUpdate(theClient);
+		}
 	}
 
 

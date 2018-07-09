@@ -51,7 +51,7 @@ public class ClientController {
 		//add the customers to the model
 		theModel.addAttribute("clients", theClients);
 		
-		return "list-clients";
+		return "clientsList";
 		
 	}
 	
@@ -65,7 +65,7 @@ public class ClientController {
 		System.out.println("Name: "+theClient.getLastName());
 		theModel.addAttribute("client", theClient); // ("name", value)
 		
-		return "client-form";
+		return "clientForm";
 	}
 	
 	
@@ -87,7 +87,7 @@ public class ClientController {
 
         List<Client> theClients = clientService.searchClients(srchName);
         theModel.addAttribute("clients", theClients);
-        return "list-clients";        
+        return "clientsList";        
     }
 	
 	@GetMapping("/formEditClient")
@@ -97,7 +97,7 @@ public class ClientController {
 		Client theClient = clientService.getClient(clientId);
 		theModel.addAttribute("client", theClient);
 		
-		return "client-form";
+		return "clientForm";
 	}
 	
 	@GetMapping("/delete")

@@ -32,11 +32,13 @@
 		
 			<table>
 				<tbody>
-						<tr>
+					
+					<!--  <tr>
 						<td><label>ID</label></td>
 						<td><form:input path="client_id" readonly="readonly"/></td>
 						<td><label>(read only) </label></td>
 					</tr>
+					-->
 		
 					<tr>
 						<td><label>First name:</label></td>
