@@ -1,7 +1,9 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 import com.entity.Client;
+import com.entity.POrder;
 
 public interface ClientService {
 
@@ -14,5 +16,9 @@ public interface ClientService {
 	public void deleteClient(int clientId);
 
 	public List<Client> searchClients(String srchName);
+	
+	public HashMap<String, Double> getStats();
+
+	public List<POrder> viewClientPOrders(Client theClient);
 
 }

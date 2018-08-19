@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Welcome</title>
-	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mainActions.js" ></script>
 	<!-- linking CSS; '${pageContext.request.contextPath}' the name of the app-->
 	<link type="text/css"
 		  rel="stylesheet"
@@ -12,68 +12,30 @@
 </head>
 
 <body>
-	<div id="wrapper">
+<div id="pleaseWaitId" class="pleaseWait">
+	<div class="pleaseWaitText">Please wait...</div>
+</div>
 		<div id="header0">
 			<h2>Welcome to Java Spring Demo Project</h2>
-			<h2>by Tomasz Gomorardzki</h2>
+			<h2>by Tomasz Gomoradzki</h2>
 			
 			<table>
 				<tr>				
 					<th>
 						<input type="button" value="Continue"
-							onclick="window.location.href='list'; return false;"
-							class="buttContinue"
+							onclick="showPleaseWait(); window.location.href='dashboard'; return false;"
+							class="button"
 						/>			
 					</th>					
 					<th>
 						<input type="button" value="Exit"
-							onclick="window.location.href='goodbye'; return false;"
-							class="buttExit"
+							onclick="showPleaseWait(); window.location.href='goodbye'; return false;"
+							class="button"
 						/>
 					</th>
 				</tr>
 			</table>			
 			
 	</div>	
-	</div>	
-	<div id="container">
-<br>
-Application info:<br>
-<br>
-Java Spring Demo Project is web application and should be considered as demo, part of the programming portfolio. It is based<br>
-on Spring framework, concepts of CRUD (Create, Read, Update, Delete), Model View Controller and works with Oracle Database.<br>
-Application allows to store, review and modify client's data. It has been developed with Eclipse Java EE IDE Oxygen v. 4.7 and<br>
-Java 8.<br>
- <br>
-Please find below some more information on implemented technologies.<br>
-<br>
-Technologies used:<br>
-<br>
-- Java 8<br>
-- Spring Framework Release 5.0.1.<br>
-- Hibernate Release 5.2.12.<br>
-- Apache Tomcat 8.0 Application Server<br>
-- CSS<br>
-- JSP<br>
-- XML<br>
-- Oracle Database XE 11.2 - SQL DDL code necessary to re-create the database with all components (Tables, sequences, triggers)<br>
-	is available within below project directory: JavaSpringDemoProject\WebContent\resources\sql\fullDatabaseExport.sql<br>
-<br>
-Some of the concepts used:<br>
-<br>
-- CRUD Concept Application (Create, Read, Update, Delete)<br>
-- Hibernate Annotations and Mappings<br>
-- Model View Controller<br>
-- Inversion of Control<br>
-- Dependency Injection<br>
-- Bean Scopes and Life-cycle Methods<br>
-- Service Layer between Controller and DAO (Facade Design pattern)<br>
-(Intermediate layer for business logic, can be used to integrate data<br>
-for multiple sources)<br>
-- DAO Data Access Object<br>
-- Hibernate Object Class<br>
-						
-		</div>	
-
 </body>
 </html>

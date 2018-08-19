@@ -1,53 +1,194 @@
 html, body{
-	margin-left:15px; margin-right:15px; 
+	margin-left:15px; margin-right:10px; 
  	padding:0px; 
-	font-family:Verdana, Arial, Helvetica, sans-serif;
+ 	font-family: Arial,Verdana,Segoe,sans-serif;
+ 	background: #d8d8d8
 }
+
+#header0 {
+	width: 70%; background: #cccccc; margin-top: 0px; padding:0.1px 20px 0.1px 0.1px;
+	color: white; text-align: right; font-size: 13px; font-weight: bold;
+	background-image: url('../../resources/images/blueBkGndBelt.jpg');}
+#header1 {
+	width: 70%; background: white; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
+	font-size: 9px; font-weight: bold; background: #d8d8d8}
+#header {
+	width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
+#header h2 {
+	width: 100%; margin:auto; color: #FFFFFF;}
+#container #content {
+	margin-top: 20px;}
 
 table {   
  	border-collapse:collapse;
 	border-bottom:1px solid gray;
-	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:72%; 
+	width: 85%;
+	font-family: Arial,Verdana,Segoe,sans-serif;
 }
- 
+
 th {
- 	border-bottom:1px solid gray;
+ 	/*border-bottom:1px solid gray;*/
 	background:none repeat scroll 0 0 #696969;
 	padding:10px;
-	color: #FFFFFF; 
+	color: #FFFFFF;  
+	text-align: center;
 }
-
 tr {
- 	border-top:1px solid gray;
-	text-align:center;	 
+	border-top:1px solid #0080ff;
+	text-align:center;
+	font-size: 14px;
 }
- 
-tr:nth-child(even) {background: #FFFFFF}
-/* tr:nth-child(odd) {background: #BBBBBB}	 */ 
- 
-#wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
-#header0 {width: 70%; background: #cccccc; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
-color: white; text-align: center;
-font-size: 12px; font-weight: bold;
-background-image: url('../../resources/images/blueBkGnd.jpg');}
-#header1 {width: 70%; background: white; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;}
-#header2 {width: 70%; background: #cccccc; margin-top: 0px; padding:15px 0px 15px 15px;}
-#header h2 {width: 100%; margin:auto; color: #FFFFFF;}
-#container {width: 100%; margin:auto}
-#container h3 {color: #000;}
-#container #content {margin-top: 20px;}
+tr:nth-child(even) {}
+tr:nth-child(odd) {}
 
-.add-button {
-	border: 1px solid #666; 
-	border-radius: 5px; 
-	padding: 4px; 
-	font-size: 12px;
-	font-weight: bold;
-	width: 120px; 
-	padding: 5px 10px; 
-	
+.inputtxtbox{
+	border: 1px solid #666; border-radius: 2px;  
+	font-size: 12px; font-weight: bold;
+	width: 160px; height: 18px;
+	padding: 7px 10px; 
 	margin-bottom: 15px;
-	background: #cccccc;
+	background: #f8f8f8; color: #808080;;
+    transition-duration: 0.45s;  /*animation, color change*/	
+}
+.inputtxtbox:hover{
+    background-color: #ffffdf;
+    color: #000000;
+}
+.radio{
+	width: 50px; height: 18px;
+    transition-duration: 0.25s;  /*animation, color change*/	
+}
+.radio:hover{
+    background-color: #ffffdf;
+}
+
+ /******** Buttons **********/
+ /***************************/
+	
+.button {
+	border: 1px solid #666; border-radius: 5px;  
+	font-size: 14px; font-weight: bold;
+	width: 120px; height: 37px;
+	padding: 7px 10px; 
+	margin-bottom: 15px;
+	background: #73b4e8;
+    transition-duration: 0.45s;  /*animation, color change*/
+}
+.button:hover{
+    background-color: #1d6daf;
+    color: white;
+}
+.buttonDetails {
+	border: 1px solid #666; border-radius: 3px;  
+	font-size: 12px; font-weight: bold;
+	width: 120px; 
+	padding: 3px 10px; 
+	margin-top: 3px;
+	margin-bottom: 3px;
+	background: #73b4e8;
+	transition-duration: 0.45s;
+}
+.buttonDetails:hover{
+    background-color: #1d6daf;
+    color: white;
+}
+#controlIcon {
+	margin-top: 3px;
+	margin-bottom: -2px;
+}
+
+
+/***********************************/
+/******** Navigation Panel  ********/
+/***********************************/
+
+	/*** Main Page Style page margin ***/
+	/*** moved with navigation panel ***/
+#mainContentId {
+    transition: margin-left .5s;
+    margin-left: 180px;
+}
+
+ /*** Navigation panel ***/
+.naviPanel {
+    height: 100%;
+    width: 180px; /* start width - dynamically changed with JavaScript */
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    top: 0; left: 0; /* Stay at the top */
+    background-color: #004d99;
+    overflow-x: hidden; overflow-y: hidden; /* Disable scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second animation slide effect */
+}
+	/** Navigation Close button **/
+.naviPanel .hideButton {
+    position: absolute; margin-left: 50px;
+    top: 0; right: 25px;
+    font-size: 36px;
+}
+	/** Navigation Show button **/
+.showNavi{
+    position: absolute; margin-left: 50px;
+    top: 21px; left: 0px; text-decoration: none;
+    color: #000000; font-size: 7px; border-style:none; 
+	width: 55px; height: 18px;	background: #73b4e8;
+    transition-duration: 0.5s; 	/*animation, color change*/
+}
+.showNavi:hover{
+    background-color: #1d6daf; color: white;
+}
+.naviTable { 
+	width:100%; 	
+ 	border-collapse:collapse;
+	text-align: center;	
+	border-style:none;
+}
+.naviItem {
+	font-family: Arial,Verdana,Segoe,sans-serif;
+	text-align: left;
+	border-style:none;
+	transition-duration: 0.4s; 
+}
+.naviPanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: Arial,Verdana,Segoe,sans-serif;
+    font-size: 17px; color: #c0c0c0;
+    display: block;
+    transition: 0.3s;
+}
+.naviItem:hover{
+    background-color: #1d6daf;
+}
+.naviPanel a:hover {
+	color: white;
+}
+/* for smaller screens, height < 450px, change the style */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+} 
+
+
+
+ /*** "Please Wait" belt ***/
+ /**************************/
+.pleaseWait {
+    z-index: 1; /* Stay on top */
+    height: 70px; width: 0px; 
+    position: fixed; top: 8px; left: 0px;
+    background-color: #005ab5;
+    overflow-x: hidden; /* Disable scroll */
+    overflow-y: hidden; /* Disable scroll */
+    transition: 1.7s; 
+}
+.pleaseWaitText {
+	text-align: right;
+	font-family: Arial,Verdana,Segoe,sans-serif;
+	font-size: 23px; color: #c0c0c0;
+	background-color: #005ab5;
+	margin-right:45px; margin-left:125px;
+	margin-top:22px; margin-bottom:0px;
+	white-space: nowrap
 }

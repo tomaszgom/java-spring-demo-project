@@ -2,29 +2,60 @@ html, body{
 	margin-left:15px; margin-right:15px; 
 	padding:0px; 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background: #d8d8d8
 }
 
-#header0 {width: 70%; height: 100%; margin-top: 0px; 
-padding:60px 35px 0px 35px;
-background-image: url('../../resources/images/blueBkGnd.jpg');
-color: white; text-align: center;
-font-size: 12px; font-weight: bold;
-height: 100%;
+#header0 {
+	width: 70%; height: 100%; 
+	padding:60px 35px 55px 35px; 
+	margin-top: 3%; margin-left: 15px; 
+	background-image: url('../../resources/images/blueBkGnd.jpg');
+	color: white; text-align: center;
+	font-size: 12px; font-weight: bold;
+	height: 100%;
 }
-
- #container {width: 100%; margin:auto; font-size: 14px; margin-top: 20px;} 
 
 table {   
-width:50%; padding: 15px; margin-left:140px;
-margin: auto;
+	width:50%; padding: 15px;
+	margin-left:140px; margin: auto;
 }
-.buttContinue {
-	border: 1px solid #666; border-radius: 5px; padding: 4px; 
-	font-size: 12px; font-weight: bold; width: 120px; padding: 5px 10px; margin-bottom: 15px;
-	background: #cccccc;
+
+
+ /*** Buttons ***********/
+ /***********************/
+	
+.button {
+	border: 1px solid #666; border-radius: 4px;  
+	font-size: 14px; font-weight: bold;
+	width: 120px; height: 37px;
+	padding: 7px 10px; 
+	margin-bottom: 15px;
+	background: #73b4e8;
+	/*-webkit-transition-duration: 3.4s;  */
+    transition-duration: 0.45s; 	/*animation, color change*/
 }
-.buttExit {
-	border: 1px solid #666; border-radius: 5px; padding: 4px; 
-	font-size: 12px; font-weight: bold; width: 120px; padding: 5px 10px; margin-bottom: 15px;
-	background: #cccccc;
+.button:hover{
+    background-color: #1d6daf;
+    color: white;
+}
+
+ /*** "Please Wait" belt ***/
+ /**************************/
+.pleaseWait {
+    z-index: 1; /* Stay on top */
+    height: 70px; width: 0px; 
+    position: fixed; top: 8px; left: 0px;
+    background-color: #005ab5;
+    overflow-x: hidden; /* Disable scroll */
+    overflow-y: hidden; /* Disable scroll */
+    transition: 1.7s; 
+}
+.pleaseWaitText {
+	text-align: right;
+	font-family: Arial,Verdana,Segoe,sans-serif;
+	font-size: 23px; color: #c0c0c0;
+	background-color: #005ab5;
+	margin-right:45px; margin-left:125px;
+	margin-top:22px; margin-bottom:0px;
+	white-space: nowrap
 }

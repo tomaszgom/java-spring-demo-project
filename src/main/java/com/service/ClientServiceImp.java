@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.ClientDAO;
 import com.entity.Client;
+import com.entity.POrder;
 
 @Service  //we add the annotation to service implementation
 public class ClientServiceImp implements ClientService {
@@ -18,7 +20,7 @@ public class ClientServiceImp implements ClientService {
 	
 	
 	@Override
-	@Transactional // service layer will define the beginning and end of transaction
+	@Transactional // service layer defines the beginning and end of transaction
 	public List<Client> getClients() {
 		//delegating the get request to DAO
 		return clientDAO.getClients();
@@ -47,8 +49,17 @@ public class ClientServiceImp implements ClientService {
 	public List<Client> searchClients(String srchName) {
 		return clientDAO.searchClients(srchName);
 	}
+	@Override
+	@Transactional
+	public HashMap<String, Double> getStats() {
+		return clientDAO.getStats();
+	}
 
-
+	@Override
+	@Transactional
+	public List<POrder> viewClientPOrders(Client theClient) {
+		return clientDAO.viewClientPOrders(theClient);
+	}
 
 
 }

@@ -13,42 +13,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.ClientDAO;
 import com.entity.Client;
+import com.entity.POrder;
 import com.service.ClientService;
 
 @Controller
 @RequestMapping("/client")
 public class ClientController {
-
 	
-	@GetMapping("/welcome")
-	public String welcomeView (Model theModel) {
-		return "welcome";
-	}
-	@GetMapping("/goodbye")
-	public String goodyeView (Model theModel) {
-		return "goodbye";
-	}
+		// inject the DAO Client - injecting DAO directly in case service layer is not used
 	
-	
-	//* inject the DAO Client, this section - injecting DAO directly,
-	//* would be uncommented if we would not use service layer
 	//@Autowired
 	//private ClientDAO clientDAO;//Spring will scan for the components that implements DAO interface, do DAOImp will be injected
 	
-	//* injection of Client Service
+		// injection of Client Service
+	
 	@Autowired
 	private ClientService clientService;
 	
 	@GetMapping("/list") 	//Get handles only GET requests, @RequestMapping handles all
 	public String listClients(Model theModel) {
 		
-		//* get clients from the dao - would be used if Service was not in place
+			// Get clients from the dao - option with no Service layer	
 		//List<Client> theClients = clientDAO.getClients();
 		
-		// get clients from the Service
+			// Get clients from the Service
 		List<Client> theClients = clientService.getClients();
 				
-		//add the customers to the model
+			//	Add the clients to the model
 		theModel.addAttribute("clients", theClients);
 		
 		return "clientsList";
@@ -58,13 +49,13 @@ public class ClientController {
 	@GetMapping("/formAddClient")
 	public String formAddClient(Model theModel){
 		
-		// model attribute
+			// Model attribute
 		Client theClient = new Client();
-		System.out.println("TG: Client add form opened");
-		System.out.println("ID: "+theClient.getClient_id());
-		System.out.println("Name: "+theClient.getLastName());
-		theModel.addAttribute("client", theClient); // ("name", value)
+//		System.out.println(" Client add form opened");
+//		System.out.println("ID: "+theClient.getClient_id());
+//		System.out.println("Name: "+theClient.getLastName());
 		
+		theModel.addAttribute("client", theClient); // ("name", value)
 		return "clientForm";
 	}
 	
@@ -72,12 +63,12 @@ public class ClientController {
 	@PostMapping("/saveClient")
 	public String saveClient(@ModelAttribute("client") Client theClient) {
 		
-		System.out.println("TG: Client save");
-		System.out.println("ID: "+theClient.getClient_id());
-		System.out.println("Name: "+theClient.getLastName());
-		System.out.println("City: "+theClient.getCity());
+//		System.out.println("Client save");
+//		System.out.println("ID: "+theClient.getClient_id());
+//		System.out.println("Name: "+theClient.getLastName());
+//		System.out.println("City: "+theClient.getCity());
 				
-		// save client with the use of Service
+			// save client with the use of Service
 		clientService.saveClient(theClient);	
 		return "redirect:/client/list";
 	}
@@ -93,12 +84,22 @@ public class ClientController {
 	@GetMapping("/formEditClient")
 	public String formEditClient(@RequestParam("clientId") int clientId, Model theModel) {
 		
-		//get client and add to model for the form
+			//get client and add to model for the form
 		Client theClient = clientService.getClient(clientId);
 		theModel.addAttribute("client", theClient);
 		
 		return "clientForm";
 	}
+	
+	@GetMapping("/pOrders")
+    public String viewClientPOrders(@RequestParam("clientId") int clientId, Model theModel) {
+
+		Client theClient = clientService.getClient(clientId);
+        List<POrder> theOrders = clientService.viewClientPOrders(theClient);
+        theModel.addAttribute("pOrders", theOrders);
+        return "pOrdersList";
+    
+    }
 	
 	@GetMapping("/delete")
 	public String deleteClient(@RequestParam("clientId") int clientId) {

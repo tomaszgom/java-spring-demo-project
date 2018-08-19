@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- ************************************************* -->
+	<!--  NOT IN USE  -->
+	<!--  XML Configuration NOT IN USE (left for the reference) -->
+	<!-- ************************************************* -->
+	
+    	<!-- Beans Definitions -->
+   
+    
+    	<!-- Dependency class-->
+    <bean id="subscriptionStandard" class="com.objects.CliSubscriptionStandard">
+    </bean>
+    
+    <bean id="subscriptionPremium" class="com.objects.CliSubscriptionPremium">
+    </bean>
+    
+   	<bean id="clientAccountStandard"
+  		class="com.objects.CliAccountStandard">		   		
+			<!--  set up constructor injection, giving the id of the bean that you want to inject -->
+   		<constructor-arg ref="subscriptionStandard"/>
+  	</bean>
+
+    <bean id="clientAccountPremium" class="com.objects.CliSubscriptionPremium"> 
+    		<!-- set up setter injection, Spring will call set(name below) method, so no need to add set... below before method name-->
+    	<property name="cliSubscription" ref="subscriptionPremium" />
+    	
+	<!--set up setters for String injections/literal values; This: "${foo.femail}" allows to get values from properties file
+	values can also be hard-coded after value=... -->			
+    	<property name="emailAddress" value="${foo.femail}" />	 		<!-- this will call setemailAddress method -->
+    	<property name="phoneNo" value="${foo.fphoneNo}" /> 			<!-- this will call setPhoneNo method -->  
+    </bean>   
+    
+    
+</beans>
+
+
+
+
+

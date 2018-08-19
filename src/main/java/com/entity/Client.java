@@ -2,13 +2,19 @@ package com.entity;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Table(name="hr.CLIENT")
@@ -34,75 +40,92 @@ public class Client {
 	
 	@Column(name="LAST_LOGIN_DATE")
 	private Date lastLoginDate;
+	
+	@OneToMany(mappedBy="client", // reference to Client field in POrder class
+				cascade= {CascadeType.PERSIST,// No cascade DELETE
+							CascadeType.MERGE,
+							CascadeType.DETACH,
+							CascadeType.REFRESH,
+							})
+	private List<POrder> pOrders;
 
+	public Client() {}
+	
+		// bi-directional relationship method
+	public void addPOrder(POrder pOrder) {
+		if(pOrders == null) {
+			pOrders = new ArrayList<>();
+		}
+		
+		pOrders.add(pOrder);
+		pOrder.setClient(this);
+	}
 	
 	@Override
 	public String toString() {
 		return "Client [Client_id=" + client_id + ", firstName=" + firstName + ", lastName=" + lastName + ", city="
 				+ city + ", points=" + points + ", lastLoginDate=" + lastLoginDate + "]";
 	}
-
+	
+	public List<POrder> getPOrders(){
+		return pOrders;
+	}
+	
+	public void setPOrsers(List<POrder> pOrders) {
+		this.pOrders = pOrders;
+	}
 
 	public int getClient_id() {
 		return client_id;
 	}
 
-
 	public void setClient_id(int cl_id) {
 		client_id = cl_id;
 	}
-
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 
 	public String getLastName() {
 		return lastName;
 	}
 
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 
 	public String getCity() {
 		return city;
 	}
 
-
 	public void setCity(String city) {
 		this.city = city;
 	}
 
-
 	public int getPoints() {
-		return points;
+		if(points == null) {
+			return 0;
+		}else{
+			return points;			
+		}
 	}
-
 
 	public void setPoints(int points) {
 		this.points = points;
 	}
 
-
 	public Date getLastLoginDate() {
 		return lastLoginDate;
 	}
-
 
 	public void setLastLoginDate(Date lastLoginDate) {
 		this.lastLoginDate = lastLoginDate;
 	}
 
-
-	public Client() {}
 
 }

@@ -7,35 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- loading property file(port.properties) into the Spring environment -->
-	<context:property-placeholder location="classpath:sport.properties"/> 
-	
 
-    <!-- Define your beans here -->
+	<!-- enable component scanning -->
+	<context:component-scan base-package="com.objects"/> 
     
-    <!-- Define the dependency class-->
-    <bean id="theService" class="com.Service">
-    </bean>
-    
-   <bean id="theClient"
-  		class="com.theCoach">
-   		<!-- class="com.luv2code.springdemo.BaseballCoach"> -->
-   		
-		<!--  set up constructor injection, giving the id of the bean that you want to inject -->
-   		<constructor-arg ref="theService"/>
-  	</bean>
-
-    <bean id="theClient_2" class="com.Client_2"> 
-    		<!-- set up setter injection, Spring will call set(name below) method, so no need to add set... below before method name-->
-    	<property name="theService" ref="theService" />
-    	
-	<!--set up setters for String injections/literal values; This: "${foo.femail}" allows to get values from properties file
-	values can also be hard-coded after value=... -->			
-    	<property name="emailAddress" value="${foo.femail}" />	 <!-- this will call setemailAddress method -->
-    	<property name="team" value="${foo.fteam}" /> 			<!-- this will call setTeam method -->
-    	
-    
-    </bean>   
     
 </beans>
 

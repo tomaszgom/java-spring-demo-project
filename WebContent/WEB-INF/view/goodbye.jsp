@@ -2,21 +2,24 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-	<title>Goodbye</title>
-	
-	<!-- linking CSS; '${pageContext.request.contextPath}' the name of the app-->
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/mainStyle.css" />
-</head>
+<h2>Select Languages:</h2>
 
-<body>
-	<div id="wrapper">
-		<div id="header0">
-			<h2>Goodbye :)</h2>			
-	</div>	
-	</div>	
-	
-</body>
+<form ACTION="goodbye">
+<input type="radio" name="id" value="Java"> Java<BR>
+<input type="radio" name="id" value=".NET"> .NET<BR>
+<input type="radio" name="id" value="PHP"> PHP<BR>
+<input type="radio" name="id" value="C/C++"> C/C++<BR>
+<input type="radio" name="id" value="PERL"> PERL <BR>
+<input type="submit" value="Submit">
+</form>
+<%
+
+String select[] = request.getParameterValues("id"); 
+if (select != null && select.length != 0) {
+out.println("You have selected: ");
+for (int i = 0; i < select.length; i++) {
+out.println(select[i]); 
+}
+}
+%>
 </html>
