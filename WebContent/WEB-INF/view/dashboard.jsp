@@ -21,7 +21,7 @@
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Exit</a></td></tr>															
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
 </div>
@@ -77,21 +77,19 @@
 						/>
 					</th>
 					<th>
-						<input type="button" value="Exit"
+						<input type="button" value="Log Out"
 							onclick="showPleaseWait();window.location.href='goodbye'; return false;"
 							class="dashboardButton"
 						/>
 					</th>
-				</tr>
-				
-			</table>	
+				</tr>			
+		</table>	
 	</div>				
 	</div>
 	</div>
 	<div><h2></h2></div>
 														
-			<table class="statsTable" id="statsTable" style="display:none;">
-				
+		<table class="statsTable" id="statsTable" style="display:none;">				
 				<tr class="stats" >				
 					<th>Total Number of Clients</th>
 					<th>${stats['totalClients']}</th>	
@@ -107,9 +105,8 @@
 				<tr class="stats" >
 					<th>Max Client Points</th>
 					<th>${stats['maxClientsPoints']}</th>							
-				</tr>		
-							
-			</table>		
+				</tr>								
+		</table>		
 </div>	
 </div>			
 </body>

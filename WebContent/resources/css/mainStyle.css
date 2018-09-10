@@ -1,10 +1,9 @@
-html, body{
-	margin-left:15px; margin-right:10px; 
+html, body{	
+ 	margin-left:15px; margin-right:10px; 
  	padding:0px; 
- 	font-family: Arial,Verdana,Segoe,sans-serif;
+ 	font-family: "Tahoma", Geneva, sans-serif;
  	background: #d8d8d8
 }
-
 #header0 {
 	width: 70%; background: #cccccc; margin-top: 0px; padding:0.1px 20px 0.1px 0.1px;
 	color: white; text-align: right; font-size: 13px; font-weight: bold;
@@ -18,6 +17,8 @@ html, body{
 	width: 100%; margin:auto; color: #FFFFFF;}
 #container #content {
 	margin-top: 20px;}
+	
+		
 
 table {   
  	border-collapse:collapse;
@@ -36,7 +37,8 @@ th {
 tr {
 	border-top:1px solid #0080ff;
 	text-align:center;
-	font-size: 14px;
+	font-size: 12px;
+	font-weight: bold;
 }
 tr:nth-child(even) {}
 tr:nth-child(odd) {}
@@ -80,11 +82,11 @@ tr:nth-child(odd) {}
 }
 .buttonDetails {
 	border: 1px solid #666; border-radius: 3px;  
-	font-size: 12px; font-weight: bold;
+	font-size:10px; font-weight: bold;
 	width: 120px; 
-	padding: 3px 10px; 
-	margin-top: 3px;
-	margin-bottom: 3px;
+	padding: 3px 5px; 
+	margin-top: 2px;
+	margin-bottom: 2px;
 	background: #73b4e8;
 	transition-duration: 0.45s;
 }
@@ -95,6 +97,7 @@ tr:nth-child(odd) {}
 #controlIcon {
 	margin-top: 3px;
 	margin-bottom: -2px;
+	width: 17px;
 }
 
 

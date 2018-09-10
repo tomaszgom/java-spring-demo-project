@@ -22,7 +22,7 @@
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Exit</a></td></tr>															
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
 </div>
@@ -44,7 +44,7 @@
 	<div>		
 		    <!--  search box -->
         <form:form action="search" method="POST">
-            <input type="text" name="srchName" class="inputtxtbox" value="Enter client's name..." />               
+            <input type="text" name="srchName" class="inputtxtbox" value="Enter client's name..." />             
             <input type="submit" value="Search" class="button" onclick="showPleaseWait();" />
             
 			<!-- this call Spring controller mapping 'showForm' -->

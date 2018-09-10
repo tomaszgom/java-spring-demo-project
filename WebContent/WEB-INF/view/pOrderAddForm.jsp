@@ -8,10 +8,11 @@
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.js" ></script>
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js" ></script>
 	<link type="text/css" rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/addClient.css">
+		  href="${pageContext.request.contextPath}/resources/css/entityForm.css">
 </head>
-<body>
 
+<body>
+<%-- Navigation Panel --%>
 <input type="submit" value=">>>"  onclick="showNavi()" class="showNavi"/>
 <div id="naviPanelId" class="naviPanel">
   <a href="javascript:void(0)" class="hideButton" onclick="hideNavi()">&times;</a>
@@ -20,7 +21,7 @@
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Exit</a></td></tr>															
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
 </div>
@@ -106,13 +107,12 @@
     					$( "#datepicker" ).datepicker();
   						} );
   					</script>
-  					<%--<fmt:formatDate pattern = "yyyy-MM-dd" value = "${now}" /> --%>
 					 <%-- <p><form:input type="text" id="datepicker" class="inputtxtbox" path="porderDate" /></p> --%>
 					 <p>
-					 <%--<fmt:formatDate pattern = "yyyy/MM/dd" />--%>
+					 <%--<fmt:formatDate pattern = "yyyy/MM/dd" value = "${now}"/>--%>
 					<form:input type="text" id="datepicker" class="inputtxtbox" path="porderDate" /> 
 					 </p>		
-						</td>
+					</td>
 					</tr>
 					<tr> 				
 						<td>
@@ -124,11 +124,11 @@
 					</tr>
 				</tbody>
 			</table>				
-		</form:form>
-	
-		<div style="clear; both;"></div>		
-	</div>
-	</div>
+		</form:form>	
+<div style="clear; both;"></div>		
+</div>
+</div>
+
 </body>
 </html>
 

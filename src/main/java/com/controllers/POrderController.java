@@ -22,7 +22,6 @@ import com.service.POrderService;
 public class POrderController {
 	
 	
-	
 	@Autowired	// Injection of POrder Service
 	private POrderService pOrderService;
 	
@@ -33,9 +32,11 @@ public class POrderController {
 	public String listPOrders(Model theModel) {
 		
 			// get POrders from the Service
-		List<POrder> thePOrders = pOrderService.getPOrders();
-				
+		
+		List<POrder> thePOrders = pOrderService.getPOrders();	
+		
 			//add the POrders to the model
+		
 		theModel.addAttribute("pOrders", thePOrders);
 		
 		return "pOrdersList";	
@@ -45,9 +46,11 @@ public class POrderController {
 	public String porderAddSelectClient(Model theModel) {
 			
 			// get clients from the Service
+		
 		List<Client> theClients = pOrderService.getClients();
 				
 			//add the clients to the model
+		
 		theModel.addAttribute("clients", theClients);
 		
 		return "pOrderAddSelectClient";		
@@ -64,12 +67,9 @@ public class POrderController {
     }
 	
 	
-	@PostMapping("/pOrderAddDetails")
-    public String orderAddDetails(@RequestParam("clientId") String clientId, Model theModel) {
+	@PostMapping("/pOrderAddForm")
+    public String orderAddForm(@RequestParam("clientId") String clientId, Model theModel) {
 		
-/*		if(clientId==null) {
-			System.out.println("clientId to null");
-		}*/
 		System.out.println("T: orderAddDetails clicked; client: "+clientId);
 //        List<Client> theClients = clientService.searchClients(srchName);
 //        theModel.addAttribute("clients", theClients);
@@ -92,7 +92,7 @@ public class POrderController {
 		System.out.println("Product Name: "+theporder.getProductName());
 		System.out.println("Order: "+theporder.getOrderValue());
         
-		return "pOrderAddDetails";
+		return "pOrderAddForm";
     }
 	
 	@PostMapping("/porderSave")
@@ -110,7 +110,8 @@ public class POrderController {
 			// save client with the use of Service
 		pOrderService.savePorder(theporder);	
 				
-		return "pOrderAddDetails";
+		//return "pOrdersList";
+		return "redirect:/porder/list";
 	}
 	
 }

@@ -6,15 +6,16 @@
 <head>
 	<title>List Orders</title>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mainActions.js" ></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.js" ></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js" ></script>	
+	
 	<!-- '${pageContext.request.contextPath}' is the name of the app-->
-	<link type="text/css"
-		  rel="stylesheet"
+	<link type="text/css" rel="stylesheet"
 		  href="${pageContext.request.contextPath}/resources/css/mainStyle.css" />
 </head>
 
 <body>
-
-<!-- Navigation Panel -->
+<%-- Navigation Panel --%>
 <input type="submit" value=">>>"  onclick="showNavi()" class="showNavi"/>
 <div id="naviPanelId" class="naviPanel">
   <a href="javascript:void(0)" class="hideButton" onclick="hideNavi()">&times;</a>
@@ -23,7 +24,7 @@
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Exit</a></td></tr>															
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
 </div>
@@ -45,7 +46,7 @@
 			
 			<!-- this call Spring controller mapping 'showForm...' -->
 		<input type="button" value="Add Order"
-			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/pOrderAddSelectClient'; return false;"
 			class="button"/>
 		<input type="button" value="Refresh List"
 			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"

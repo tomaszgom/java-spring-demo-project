@@ -1,6 +1,7 @@
 html, body{
-	margin-left:15px; margin-right:10px; padding:0px; 
- 	font-family: Arial,Verdana,Segoe,sans-serif;
+ 	margin-left:15px; margin-right:10px; 
+ 	padding:0px; 
+ 	font-family: "Tahoma", Geneva, sans-serif;
  	background: #d8d8d8
 }
 form {
@@ -9,19 +10,22 @@ form {
 
  /*** Header Section ******/
  /*************************/
-#header0 {width: 70%; background: #cccccc; margin-top: 0px;
-	padding:0.1px 20px 0.1px 0.1px;
+	
+#header0 {
+	width: 70%; background: #cccccc; margin-top: 0px; padding:0.1px 20px 0.1px 0.1px;
 	color: white; text-align: right; font-size: 13px; font-weight: bold;
 	background-image: url('../../resources/images/blueBkGndBelt.jpg');}
-#header1 {width: 70%; margin-top: 0px;
-	padding:9px 0px 9px 9px; font-size: 10px;
-	font-size: 12px; font-weight: bold; background: #d8d8d8}
+#header1 {
+	width: 70%; background: white; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
+	font-size: 9px; font-weight: bold; background: #d8d8d8}
 #header {
 	width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
 #header h2 {
 	width: 100%; margin:auto; color: #FFFFFF;}
 #container #content {
 	margin-top: 20px;}
+	
+	
 
 #buttons{
 	height: 65px;
@@ -184,7 +188,7 @@ tr:nth-child(odd) {}
 	white-space: nowrap
 }
 
-
+ /**************************/
  /*** Date picker start ****/
  /**************************/
  
@@ -1502,6 +1506,6 @@ a.ui-button:active,
 }
  
  
- 
-  /*** Date picker end ****/
+ /**************************/ 
+ /**** Date picker end *****/
  /**************************/

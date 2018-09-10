@@ -9,19 +9,25 @@ html, body{
 	width: 70%; height: 100%; 
 	padding:60px 35px 55px 35px; 
 	margin-top: 3%; margin-left: 15px; 
-	background-image: url('../../resources/images/blueBkGnd.jpg');
+background-image: url('../../resources/images/blueBkGnd.jpg');
 	color: white; text-align: center;
 	font-size: 12px; font-weight: bold;
 	height: 100%;
 }
 
 table {   
-	width:50%; padding: 15px;
-	margin-left:140px; margin: auto;
+	 width:50%;   
+	/* padding: 15px;  */
+	 margin-left:210px;  
+	/* margin: auto; */
+	
+	 /* border-collapse:collapse; */
+	/*border:1px solid gray; */
+	/*	 background-image: url('../../resources/images/blueBkGnd.jpg');  */
 }
 
 
- /*** Buttons ***********/
+ /******* Buttons *******/
  /***********************/
 	
 .button {
@@ -38,6 +44,24 @@ table {
     background-color: #1d6daf;
     color: white;
 }
+
+
+ /****** Input box *******/
+ /***********************/
+.inputtxtbox{
+	border: 1px solid #666; border-radius: 2px;  
+	font-size: 14px; font-weight: bold;
+	width: 160px; height: 18px;
+	padding: 7px 10px;
+	background: #f8f8f8; color: #0055aa;
+    transition-duration: 0.45s;  /*animation, color change*/	
+}
+.inputtxtbox:hover{
+    background-color: #ffffdf;
+    color: #000000;
+}
+
+
 
  /*** "Please Wait" belt ***/
  /**************************/

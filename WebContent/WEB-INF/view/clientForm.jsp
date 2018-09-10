@@ -5,11 +5,15 @@
 <head>
 	<title>Save Client</title>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mainActions.js" ></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.js" ></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js" ></script>		
 	<link type="text/css" rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/addClient.css">
+		  href="${pageContext.request.contextPath}/resources/css/entityForm.css">
 </head>
-<body>
 
+
+<body>
+<%-- Navigation Panel --%>
 <input type="submit" value=">>>"  onclick="showNavi()" class="showNavi"/>
 <div id="naviPanelId" class="naviPanel">
   <a href="javascript:void(0)" class="hideButton" onclick="hideNavi()">&times;</a>
@@ -18,7 +22,7 @@
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Exit</a></td></tr>															
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
 </div>
@@ -32,7 +36,8 @@
 	<div id="wrapper">		
 		<div id="header0"><p>Java Spring Demo Project by Tomasz Gomoradzki</p></div>
 		<div id="header1"><h2>Purchase Orders Management - Client Details</h2></div>
-		<div id="header"><h2></h2></div>
+		<div id="header"><h2></h2>
+	</div>
 	</div>
 	<div><br></div>
 	<div id="container">	
@@ -57,7 +62,7 @@
 						readOnly="true" style="background: #d8d8d8;"/></td>
 					</tr>
 					<tr>
-						<td><label><br></label></td>
+						<td><br></td>
 					</tr>
 					<tr>
 						<td><label>First Name</label></td>
@@ -75,20 +80,26 @@
 						<td><form:input class="inputtxtbox" path="points" /></td>					
 						<td><label><br></label></td>
 					</tr>
+			<script>
+  				$( function() {
+    			$( "#datepicker" ).datepicker();
+  				} );
+  			</script>
 					<%--  <tr style="display:none;"> --%>
 					  <tr > 				
 						<td><label>Last Login Date</label></td>
-						<td><form:input class="inputtxtbox" path="lastLoginDate" /></td>
-
+						<td>
+						<p>
+						<form:input type="text" id="datepicker" class="inputtxtbox" path="lastLoginDate" /> 
+					 	</p>	
+						</td>
 					</tr>
-		
 				</tbody>
 			</table>				
 		</form:form>
-	
-		<div style="clear; both;"></div>		
-	</div>
-	</div>
+<div style="clear; both;"></div>		
+</div>
+</div>
 </body>
 </html>
 

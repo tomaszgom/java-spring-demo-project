@@ -40,7 +40,7 @@ public class ClientAccountStandard implements ClientAccount {
 		//life cycle method annotation, launched at the the start of bean
 	@PostConstruct
 	public void CliAccountBeanStart() {
-		System.out.println("Bean Client Account Standard has been started.");
+		System.out.println("Bean Client Account Standard has been created.");
 	}
 	
 	@PreDestroy
