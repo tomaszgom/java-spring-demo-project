@@ -29,5 +29,6 @@ Technologies used and some of the concepts deployed:
 - DAO Data Access Object
 - Hibernate Object Class
 - HQL
+- Hibernate Validator (Annotations)
 
 

@@ -52,7 +52,35 @@ th {
 	margin-top: 20px;}
 	
 	
- /******* Buttons ***********/
+/********* Chart ***********/
+/***************************/	
+
+/*	
+body {  
+  background: #1D1F20;
+  padding: 16px;
+}
+*/
+
+canvas {
+  border: 1px dotted darkblue;
+}
+
+.chart-container {
+  position: relative;
+  /* margin: auto; */
+  margin-left: 265px;
+  height: 45vh;
+  width: 45vw;
+}
+	
+	
+/*	
+#dashBoardChart {
+width: 50px; position:absolute; top:260px; left:100px; width:600px; height:100px;}
+	*/
+	
+ /********* Buttons *********/
  /***************************/
 	
 .dashboardButton {

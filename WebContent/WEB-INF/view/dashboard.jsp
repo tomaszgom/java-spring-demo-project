@@ -8,6 +8,10 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mainActions.js" ></script>
 	<link type="text/css" rel="stylesheet"
 			href="${pageContext.request.contextPath}/resources/css/dashboard.css" />	
+	
+	<%-- Chart.js Diagrams --%>		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>		
+			
 </head>
 
 <body>
@@ -28,6 +32,7 @@
 <div id="pleaseWaitId" class="pleaseWait">
 	<div class="pleaseWaitText">Please wait...</div>
 </div>
+
 <!-- Navigation Panel End -->
 
 <!-- Main Content Page  -->
@@ -106,9 +111,122 @@
 					<th>Max Client Points</th>
 					<th>${stats['maxClientsPoints']}</th>							
 				</tr>								
-		</table>		
+		</table>	
+		
 </div>	
-</div>			
+</div>	
+	
+<div><h2></h2></div>
+
+	<div class="chart-container">	
+		<canvas id="dashBoardChart"></canvas>
+	</div>
+	
+	
+  <script>
+    let myChart = document.getElementById('dashBoardChart').getContext('2d');
+   // myChart.dashBoardChart.width = 300;
+   // myChart.dashBoardChart.height = 300;
+
+    // Global Options
+   // Chart.defaults.global.defaultFontFamily = 'Lato';
+   // Chart.defaults.global.defaultFontSize = 18;
+   // Chart.defaults.global.defaultFontColor = '#777';
+
+    let ordersChart = new Chart(dashBoardChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Product 10', 'Product 20', 'Product 30', 'Product 50', 'Product 90'],
+        datasets:[{
+          label:'Vol.',
+          // backgroundColor: "rgba(255,99,132,0.2)",
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(54, 162, 235, 0.6)',	// blue
+            'rgba(255, 159, 64, 0.6)', //orange
+            'rgba(255, 99, 132, 0.6)', //red
+            'rgba(75, 192, 192, 0.6)',	//green
+            'rgba(153, 102, 255, 0.6)'	//violet
+         // 'rgba(255, 206, 86, 0.6)', //yellow
+          ], 
+         // borderColor: "rgba(255,99,132,1)",
+          borderColor:'#777',
+          borderWidth: 1,
+       //   hoverBackgroundColor: "rgba(54, 162, 235, 0.6)",
+       //   hoverBorderColor: "rgba(54, 162, 235, 0.6)",
+       //   hoverBorderWidth:3,
+       //   hoverBorderColor:'#000'
+       
+          data:[9,10,7,2,5]
+        //,
+
+        }]
+      }
+     ,
+       options:{
+        title:{
+          display:true,
+          text:'Purchase Orders by Product',
+          fontSize:25
+        },
+        legend:{
+          display:false,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{left:20, right:0, bottom:0, top:0}
+        },
+        tooltips:{enabled:true},
+        
+        /////
+            maintainAspectRatio: false,
+    		  scales: {
+    		    yAxes: [{
+    		      stacked: true,
+    		      gridLines: {
+    		        display: true,
+    		        	color:'rgba(54, 162, 235, 0.6)'
+    		      }
+    		    }],
+    		    xAxes: [{
+    		      gridLines: {
+    		        display: false
+    		      }
+    		    }]
+    		  } 
+        /////
+      }
+      
+    });
+  
+/*     var options = {
+    		  maintainAspectRatio: false,
+    		  scales: {
+    		    yAxes: [{
+    		      stacked: true,
+    		      gridLines: {
+    		        display: true,
+    		        color: "rgba(255,99,132,0.2)"
+    		      }
+    		    }],
+    		    xAxes: [{
+    		      gridLines: {
+    		        display: false
+    		      }
+    		    }]
+    		  }
+    		}; */
+    
+       
+/*     Chart.Bar('dashBoardChart', {
+    	  options: options,
+    	  data: data
+    	}); */
+  </script>
+		
 </body>
 </html>
 

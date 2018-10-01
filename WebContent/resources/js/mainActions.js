@@ -49,3 +49,12 @@ function pOrderAddSearchClient(){
     return true;
 }
 
+function confirmationBox(){
+    var retVal = confirm("Do you want to delete the item?");
+    if( retVal == true ){
+       return true;
+    }else{
+       return false;
+    }
+ }
+

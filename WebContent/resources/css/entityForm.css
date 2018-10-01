@@ -70,7 +70,22 @@ tr:nth-child(odd) {}
     background-color: #ffffdf;
     color: #000000;
 }
-	
+.inputDropDown{
+	border: 1px solid #666; border-radius: 2px;  
+	font-size: 14px; font-weight: bold;
+	width: 182px; height: 34px;
+	padding: 7px 10px;
+	background: #f8f8f8; color: #0055aa;
+    transition-duration: 0.45s;  /*animation, color change*/	
+}
+.inputDropDown:hover{
+    background-color: #ffffdf;
+    color: #000000;
+}
+
+.formErrors{
+	color: red
+}
 	
  /******* Buttons ***********/
  /***************************/

@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +28,13 @@ public class Client {
 	@Column(name="CLIENT_ID")
 	private int client_id;
 	
+	@NotNull(message="First Name is required")
+	@Size(min=1, message="First Name is required")
 	@Column(name="FIRST_NAME")
 	private String firstName;
-	
+		
+	@NotNull(message="Last Name is required")
+	@Size(min=1, message="Last Name is required")
 	@Column(name="LAST_NAME")
 	private String lastName;
 	

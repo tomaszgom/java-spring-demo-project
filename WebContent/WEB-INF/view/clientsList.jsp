@@ -109,15 +109,14 @@
 						<td> ${tempClient.lastLoginDate} </td>
 									 
 						 <td> 
-							<a href="showPleaseWait();${deleteLink}"
-							onclick="if(!(confirm('Are you sure you want to delete the client? Note that all client's orders will be deleted as well.'))) return false">
+						 	<a href="${deleteLink}"
+							<%-- <a href="showPleaseWait();${deleteLink}"  --%>
+							onclick="if(!confirm('Are you sure you want to delete this client? All client orders will be deleted as well.')){return false;}"> 						
 							<img id="controlIcon" src="${pageContext.request.contextPath}/resources/images/delete.jpg";
-							class="controlIcon"
-							>
+							class="controlIcon">
 							</a>
 						 </td>
-						 
-						 
+						 						 
 						 <td> 
 							<input type="button" value="Purchase Orders"
 							onclick="showPleaseWait();window.location.href='${pOrder}'; return false;"
