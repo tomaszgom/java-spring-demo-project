@@ -61,12 +61,17 @@ public class ClientDAOImp implements ClientDAO {
 
 	@Override
 	public void deleteClient(int clientId) {
-			//get session, create query to delete object and exec
+		// Get session, create query to delete object and exec
 		Session currSession = sessionFactory.getCurrentSession();
-		Query theQuery = currSession.createQuery("delete from Client where client_id=:cliID");
-		theQuery.setParameter("cliID", clientId);
-		theQuery.executeUpdate();
 		
+		// Query theQuery = currSession.createQuery("delete from Client where client_id=:cliID");
+		// theQuery.setParameter("cliID", clientId);
+		// theQuery.executeUpdate();
+		
+		Query theQuery = currSession.createQuery("from Client where client_id=:cliID");
+		theQuery.setParameter("cliID", clientId);
+		Client cli= (Client)theQuery.list().get(0);
+		currSession.delete(cli);
 	}
 
 	@Override
@@ -74,9 +79,9 @@ public class ClientDAOImp implements ClientDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query theQuery = null;
 		
-        	// if name is not empty
+        // If name is not empty
         if (srchName != null && srchName.trim().length() > 0) {
-            	// search by firstName or lastName
+            // search by firstName or lastName
             theQuery =currentSession.createQuery("from Client where lower(firstName) like :theName or lower(lastName) like :theName", Client.class);
             theQuery.setParameter("theName", "%" + srchName.toLowerCase() + "%");          
         }else {

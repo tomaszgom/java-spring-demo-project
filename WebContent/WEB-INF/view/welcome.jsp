@@ -17,8 +17,8 @@
 </div>
 		<div id="header0">
 		
-			<h2>Welcome to Java Spring Demo Project</h2>
-			<h2>by Tomasz Gomoradzki</h2>			
+			<h2>Welcome to Java Spring Demo Project by Tomasz Gomoradzki</h2>	
+			<h2>Purchase Orders Management</h2>		
 			
 <form:form action="porderSave" modelAttribute="porder" method="POST">
 	<table>

@@ -1,20 +1,37 @@
 html, body{	
- 	margin-left:15px; margin-right:10px; 
+ 	margin-left:15px;
+ 	margin-right:10px; 
  	padding:0px; 
  	font-family: "Tahoma", Geneva, sans-serif;
  	background: #d8d8d8
 }
 #header0 {
-	width: 70%; background: #cccccc; margin-top: 0px; padding:0.1px 20px 0.1px 0.1px;
-	color: white; text-align: right; font-size: 13px; font-weight: bold;
+	width: 70%;
+	background: #cccccc;
+	margin-top: 0px;
+	padding:0.1px 15px 0.1px 0.1px;
+	color: white;
+	text-align: right;
+	font-size: 13px;
+	font-weight: bold;
 	background-image: url('../../resources/images/blueBkGndBelt.jpg');}
 #header1 {
-	width: 70%; background: white; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
-	font-size: 9px; font-weight: bold; background: #d8d8d8}
+	width: 70%;
+	background: white;
+	margin-top: 0px;
+	padding:9px 0px 9px 9px;
+	font-size: 11px;
+	font-weight: bold;
+	background: #d8d8d8}
 #header {
-	width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
+	width: 70%;
+	background: #696969;
+	margin-top: 0px;
+	padding:9px 0px 9px 9px;}
 #header h2 {
-	width: 100%; margin:auto; color: #FFFFFF;}
+	width: 100%;
+	margin:auto;
+	color: #FFFFFF;}
 #container #content {
 	margin-top: 20px;}
 	
@@ -44,12 +61,16 @@ tr:nth-child(even) {}
 tr:nth-child(odd) {}
 
 .inputtxtbox{
-	border: 1px solid #666; border-radius: 2px;  
-	font-size: 12px; font-weight: bold;
-	width: 160px; height: 18px;
+	border: 1px solid #666;
+	border-radius: 2px;  
+	font-size: 12px;
+	font-weight: bold;
+	width: 160px;
+	height: 18px;
 	padding: 7px 10px; 
 	margin-bottom: 15px;
-	background: #f8f8f8; color: #808080;;
+	background: #f8f8f8;
+	color: #808080;;
     transition-duration: 0.45s;  /*animation, color change*/	
 }
 .inputtxtbox:hover{
@@ -68,9 +89,12 @@ tr:nth-child(odd) {}
  /***************************/
 	
 .button {
-	border: 1px solid #666; border-radius: 5px;  
-	font-size: 14px; font-weight: bold;
-	width: 120px; height: 37px;
+	border: 1px solid #666;
+	border-radius: 5px;  
+	font-size: 14px;
+	font-weight: bold;
+	width: 120px;
+	height: 37px;
 	padding: 7px 10px; 
 	margin-bottom: 15px;
 	background: #73b4e8;
@@ -120,13 +144,15 @@ tr:nth-child(odd) {}
     z-index: 1; /* Stay on top */
     top: 0; left: 0; /* Stay at the top */
     background-color: #004d99;
-    overflow-x: hidden; overflow-y: hidden; /* Disable scroll */
+    overflow-x: hidden;
+    overflow-y: hidden; /* Disable scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second animation slide effect */
 }
 	/** Navigation Close button **/
 .naviPanel .hideButton {
-    position: absolute; margin-left: 50px;
+    position: absolute;
+    margin-left: 50px;
     top: 0; right: 25px;
     font-size: 36px;
 }
@@ -152,6 +178,7 @@ tr:nth-child(odd) {}
 	text-align: left;
 	border-style:none;
 	transition-duration: 0.4s; 
+	font-weight: bold;
 }
 .naviPanel a {
     padding: 8px 8px 8px 32px;

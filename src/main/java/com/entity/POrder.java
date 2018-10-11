@@ -5,6 +5,7 @@ import java.sql.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,12 +25,15 @@ public class POrder {
 	@Column(name="ORDER_ID")
 	private int order_id;
 	
-	@ManyToOne (cascade= {CascadeType.PERSIST, // No cascade DELETE
-			CascadeType.MERGE,
-			CascadeType.DETACH,
-			CascadeType.REFRESH,
-			})
-	@JoinColumn(name="CLIENT_ID")
+	@ManyToOne (fetch = FetchType.LAZY,
+				cascade= {CascadeType.ALL,
+							//CascadeType.PERSIST,
+							//CascadeType.MERGE,
+							//CascadeType.DETACH,
+							//CascadeType.REFRESH,
+							//CascadeType.REMOVE,
+				})
+	@JoinColumn(name="CLIENT_ID", nullable=false)
 	private Client client;
 	
 	//-- @Column(name="CLIENT_ID")

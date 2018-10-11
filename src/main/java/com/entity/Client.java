@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -48,22 +49,34 @@ public class Client {
 	private Date lastLoginDate;
 	
 	@OneToMany(mappedBy="client", // reference to Client field in POrder class
-				cascade= {CascadeType.PERSIST,// No cascade DELETE
-							CascadeType.MERGE,
-							CascadeType.DETACH,
-							CascadeType.REFRESH,
-							})
+				cascade= {CascadeType.ALL,	 
+							//CascadeType.PERSIST, // Cascade save operations
+							//CascadeType.REMOVE, // Removes all related entities association with this setting when the owning entity is deleted.
+							//CascadeType.MERGE,
+							//CascadeType.DETACH,
+							//CascadeType.REFRESH,
+							},orphanRemoval = true)//@JoinColumn( name="CLIENT_ID")
 	private List<POrder> pOrders;
 
 	public Client() {}
 	
-		// bi-directional relationship method
+	// Bi-directional relationship method
 	public void addPOrder(POrder pOrder) {
 		if(pOrders == null) {
 			pOrders = new ArrayList<>();
 		}
 		
 		pOrders.add(pOrder);
+		pOrder.setClient(this);
+	}
+	
+	// Bi-directional relationship method
+	public void removePOrder(POrder pOrder) {
+		if(pOrders == null) {
+			return;
+		}
+		
+		pOrders.remove(pOrder);
 		pOrder.setClient(this);
 	}
 	

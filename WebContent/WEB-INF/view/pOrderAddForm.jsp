@@ -33,8 +33,8 @@
 <div id="mainContentId">
 
 	<div id="wrapper">		
-		<div id="header0"><p>Java Spring Demo Project by Tomasz Gomoradzki</p></div>
-		<div id="header1"><h2>Purchase Orders Management - Order Details</h2></div>
+		<div id="header0"><p>Purchase Orders Management  -  Java Spring Demo Project by Tomasz Gomoradzki</p></div>
+		<div id="header1"><h2>Order Details</h2></div>
 		<div id="header"><h2></h2></div>
 	</div>
 	<div><br></div>

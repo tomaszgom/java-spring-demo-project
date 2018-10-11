@@ -31,12 +31,10 @@ public class POrderController {
 	@GetMapping("/list")
 	public String listPOrders(Model theModel) {
 		
-			// get POrders from the Service
-		
+		// Get POrders from the Service		
 		List<POrder> thePOrders = pOrderService.getPOrders();	
 		
-			//add the POrders to the model
-		
+		// Add the POrders to the model
 		theModel.addAttribute("pOrders", thePOrders);
 		
 		return "pOrdersList";	
@@ -45,12 +43,10 @@ public class POrderController {
 	@GetMapping("/pOrderAddSelectClient")
 	public String porderAddSelectClient(Model theModel) {
 			
-			// get clients from the Service
-		
+		// Get clients from the Service
 		List<Client> theClients = pOrderService.getClients();
 				
-			//add the clients to the model
-		
+		// Add the clients to the model	
 		theModel.addAttribute("clients", theClients);
 		
 		return "pOrderAddSelectClient";		
@@ -78,7 +74,7 @@ public class POrderController {
 		int clientIdInt = Integer.parseInt(clientId);
 		Client theClient = clientService.getClient(clientIdInt);
 		
-			// model attribute
+		// Model attribute
 		POrder theporder = new POrder();
 		theporder.setClient(theClient);
 		theModel.addAttribute("porder", theporder); // ("name", value)	
@@ -107,10 +103,10 @@ public class POrderController {
 		System.out.println("Product Name: "+theporder.getProductName());
 		System.out.println("Order: "+theporder.getOrderValue());
 				
-			// save client with the use of Service
+		// Save client with the use of Service
 		pOrderService.savePorder(theporder);	
 				
-		//return "pOrdersList";
+		// Return "pOrdersList";
 		return "redirect:/porder/list";
 	}
 	

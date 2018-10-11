@@ -12,16 +12,33 @@ form {
  /*************************/
 	
 #header0 {
-	width: 70%; background: #cccccc; margin-top: 0px; padding:0.1px 20px 0.1px 0.1px;
-	color: white; text-align: right; font-size: 13px; font-weight: bold;
+	width: 70%;
+	background: #cccccc;
+	margin-top: 0px;
+	padding:0.1px 20px 0.1px 0.1px;
+	color: white;
+	text-align: right;
+	font-size: 13px;
+	font-weight: bold;
 	background-image: url('../../resources/images/blueBkGndBelt.jpg');}
 #header1 {
-	width: 70%; background: white; margin-top: 0px; padding:9px 0px 9px 9px; font-size: 10px;
-	font-size: 9px; font-weight: bold; background: #d8d8d8}
+	width: 70%;
+	background: white;
+	margin-top: 0px;
+	padding:9px 0px 9px 9px;
+	font-size: 10px;
+	font-size: 9px;
+	font-weight: bold;
+	background: #d8d8d8}
 #header {
-	width: 70%; background: #696969; margin-top: 0px; padding:9px 0px 9px 9px;}
+	width: 70%;
+	background: #696969;
+	margin-top: 0px;
+	padding:9px 0px 9px 9px;}
 #header h2 {
-	width: 100%; margin:auto; color: #FFFFFF;}
+	width: 100%;
+	margin:auto;
+	color: #FFFFFF;}
 #container #content {
 	margin-top: 20px;}
 	
@@ -158,7 +175,8 @@ tr:nth-child(odd) {}
 	font-family: Arial,Verdana,Segoe,sans-serif;
 	text-align: left;
 	border-style:none;
-	transition-duration: 0.4s; 
+	transition-duration: 0.4s;
+	font-weight: bold;
 }
 .naviPanel a {
     padding: 8px 8px 8px 32px;

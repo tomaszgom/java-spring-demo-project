@@ -30,27 +30,26 @@ import com.service.ClientService;
 @RequestMapping("/client")
 public class ClientController {
 
-	/*
-		// *** Dismissed (left for reference) ***
-		// inject the DAO Client - injecting DAO directly in case service layer is not used
-		//Spring scans for the components that implements DAO interface, DAOImp will be injected
-	@Autowired
-	private ClientDAO clientDAO;
-	 */
+		/*** Dismissed (left for reference) ***
+		/*** inject the DAO Client - injecting DAO directly in case service layer is not used
+		/*** Spring scans for the components that implements DAO interface, DAOImp will be injected */	
+		//@Autowired
+		//private ClientDAO clientDAO;
+	 
 
-	@Autowired					// injection of Client Service
+	@Autowired		// injection of Client Service
 	private ClientService clientService;
 	
 	@GetMapping("/list") 	//Get handles only GET requests, @RequestMapping handles all
 	public String listClients(Model theModel) {
 		
-			// Get clients from the dao - option with no Service layer	
+		// Get clients from the dao - option with no Service layer	
 		//List<Client> theClients = clientDAO.getClients();
 		
-			// Get clients from the Service	
+		// Get clients from the Service	
 		List<Client> theClients = clientService.getClients();
 				
-			//	Add the clients to the model
+		//	Add the clients to the model
 		theModel.addAttribute("clients", theClients);
 		
 		return "clientsList";
@@ -60,7 +59,7 @@ public class ClientController {
 	@GetMapping("/formAddClient")
 	public String formAddClient(Model theModel){
 		
-			// Model attribute
+		// Model attribute
 		Client theClient = new Client();
 		// System.out.println(" Client add. ID: "+theClient.getClient_id()+" Name: "+theClient.getLastName());
 		
@@ -72,7 +71,7 @@ public class ClientController {
 	@GetMapping("/formEditClient")
 	public String formEditClient(@RequestParam("clientId") int clientId, Model theModel) {
 		
-			// Get client and add to model for the form	
+		// Get client and add to model for the form	
 		Client theClient = clientService.getClient(clientId);
 		theModel.addAttribute("client", theClient);
 		
@@ -101,11 +100,11 @@ public class ClientController {
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		
-				// Client Form String Trim
+		// Client Form String Trim
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 		
-			// Client Form date format
+		// Client Form date format
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         simpleDateFormat.setLenient(true);
         dataBinder.registerCustomEditor(Date.class, new CustomDateEditor(simpleDateFormat, true));
