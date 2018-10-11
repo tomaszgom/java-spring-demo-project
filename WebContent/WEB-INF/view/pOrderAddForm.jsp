@@ -39,8 +39,8 @@
 	</div>
 	<div><br></div>
 	<div id="container">	
-		<form:form action="porderSave" modelAttribute="porder" method="POST">
-		<!-- match data with client ID hidden form field, get from Client -->
+		 <form:form action="porderSave" modelAttribute="porder" method="POST">
+		 <!-- match data with client ID hidden form field, get from Client -->
 		 <form:hidden path="order_id"/> 
 		 <form:hidden path="client.client_id"/>
 
@@ -81,7 +81,11 @@
 						<td>
 							<form:input class="inputtxtbox" path="client.lastName" 
 							readOnly="true" style="background: #d8d8d8;"/>
-						</td>	
+						</td>
+									
+						<td><form:input style="display:none;" path="client.city"/></td>
+						<td><form:input style="display:none;" type="number" path="client.points"/></td>						
+						<td><form:input style="display:none;" type="date" path="client.lastLoginDate"/></td>
 								
 					</tr>	
 								
@@ -95,6 +99,8 @@
 						<td><form:input class="inputtxtbox" path="orderValue" /></td>
 						<td><label>Product Name</label></td>
 						<td><form:input class="inputtxtbox" path="productName" /></td>	
+						
+						
 								
 						<td><label><br></label></td>
 					</tr>
