@@ -50,7 +50,7 @@
 		
 	<%-- Search box --%>
 	<%-- Form action="pOrderAddSearchClient" method="POST" --%>
-    <input type="text" name="srchName" class="inputtxtbox" value="Enter client's name..." />               
+    <input type="text" name="srchName" class="inputtxtbox" placeholder="Enter client's name..." />               
     <input type="button" value="Search" class="button" onclick="return pOrderAddSearchClient();" />           
 	
 	<%-- Form  Submit action="pOrderAddForm" --%>

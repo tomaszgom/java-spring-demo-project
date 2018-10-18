@@ -7,27 +7,26 @@
 	<title>Welcome</title>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mainActions.js" ></script>
 	<!-- linking CSS; '${pageContext.request.contextPath}' the name of the app-->
-	<link type="text/css" rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/welcome.css" />
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/welcome.css" />
 </head>
 
 <body>
 <div id="pleaseWaitId" class="pleaseWait">
 	<div class="pleaseWaitText">Please wait...</div>
 </div>
-		<div id="header0">
-		
+		<div id="header0">		
 			<h2>Welcome to Java Spring Demo Project by Tomasz Gomoradzki</h2>	
 			<h2>Purchase Orders Management</h2>		
 			
-<form:form action="porderSave" modelAttribute="porder" method="POST">
+<form:form action="validate-credentials" method="POST">
+
 	<table>
 	
 	<td><br><br><br></td>
 	<tr>				
 		<td><label>Login</label></td>
 		<td>
-		<input type="text" name="login" class="inputtxtbox" value="DemoUser" /> 
+		<input type="text" name="usrLogin" class="inputtxtbox" /> 
 		<%-- <td><form:input class="inputtxtbox" value="DemoUser" style="background: #d8d8d8;"/></td> --%>
 		</td>
 		<td><label>(DemoUser)</label></td>
@@ -35,7 +34,7 @@
 	<tr>
 		<td><label>Password</label></td>
 		<td>
-		<input type="password" name="password" class="inputtxtbox" value="Password" /> 
+		<input type="password" name="usrPassword" class="inputtxtbox" /> 
 		<%-- <td><form:input class="inputtxtbox" value="password" /></td>	 --%>
 		</td>
 		<td><label>(Password)</label></td>
@@ -43,11 +42,10 @@
 	<tr>	
 	<td><br><br><br></td>
 	</tr>
+		
 	<tr>				
-		<th>
-			<input type="button" value="Continue"
-				onclick="showPleaseWait(); window.location.href='dashboard'; return false;"
-				class="button"/>			
+		<th>	       
+  		    <input type="submit" value="Continue" class="button" onclick="showPleaseWait();" />			
 		</th>					
 		<th>
 			<input type="button" value="Exit"
@@ -58,7 +56,8 @@
 	
 </table>	
 		
-</form:form>				
+</form:form>
+				
 </div>	
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.controllers;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,18 @@ public class MainController {
 	@GetMapping("/welcome")
 	public String welcomeView (Model theModel) {
 		return "welcome";
+	}
+	
+	// Simplified login password validation
+	@PostMapping("/validate-credentials")
+	public String welcomeView (@RequestParam("usrLogin") String usrLogin, @RequestParam("usrPassword") String usrPassword, Model theModel) {
+				
+		if(Objects.equals(usrLogin, "DemoUser") && Objects.equals(usrPassword, "Password")) {
+			return "redirect:/app/dashboard";			
+		}else {
+			//return "redirect:/app/dashboard";
+			return "access-denied";			
+		}		
 	}
 	
 	@GetMapping("/dashboard")

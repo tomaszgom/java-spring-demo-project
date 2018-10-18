@@ -44,7 +44,7 @@
 	<div>		
 		    <!--  search box -->
         <form:form action="search" method="POST">
-            <input type="text" name="srchName" class="inputtxtbox" value="Enter client's name..." />             
+            <input type="text" name="srchName" class="inputtxtbox" placeholder="Enter client's name..." />             
             <input type="submit" value="Search" class="button" onclick="showPleaseWait();" />
             
 			<!-- this call Spring controller mapping 'showForm' -->
@@ -52,7 +52,7 @@
 				onclick="showPleaseWait();window.location.href='formAddClient'; return false;"
 				class="button"/>
 			<input type="button" value="Help"
-				onclick="showPleaseWait();window.location.href='formAddClient'; return false;"
+				onclick="showPleaseWait();window.location.href='dashboard'; return false;"
 				class="button"/>         
         </form:form>						
 	</div>		
