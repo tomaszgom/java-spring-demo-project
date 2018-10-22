@@ -10,24 +10,24 @@ import com.dao.POrderDAO;
 import com.entity.Client;
 import com.entity.POrder;
 
-@Service  //we add the annotation to service implementation
+@Service  // We add the annotation to service implementation
 public class POrderServiceImp implements POrderService {
 	
-	// injection of the Client DAO
+	// Injection of the Client DAO
 	@Autowired
 	private POrderDAO pOrderDAO;
 		
 	@Override
-	@Transactional // service layer define the beginning and end of transaction
+	@Transactional // Service layer define the beginning and end of transaction
 	public List<POrder> getPOrders() {
-		//delegating the get request to DAO
+		// Delegating the get request to DAO
 		return pOrderDAO.getPOrders();
 	}
 
 	@Override
 	@Transactional
 	public List<Client> getClients() {
-		//delegating the get request to DAO
+		// Delegating the get request to DAO
 		return pOrderDAO.getClients();
 	}
 

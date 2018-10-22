@@ -51,21 +51,69 @@
 			<input type="button" value="Add Client"
 				onclick="showPleaseWait();window.location.href='formAddClient'; return false;"
 				class="button"/>
+				
+			<input type="button" value="Refresh List"
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/client/list'; return false;"
+			class="button"/>
+							
 			<input type="button" value="Help"
-				onclick="showPleaseWait();window.location.href='dashboard'; return false;"
+				onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/client/list'; return false;"
 				class="button"/>         
         </form:form>						
 	</div>		
 	<div id="header1"><h2></h2></div>
+	
+	<c:url var="sortById" value="/client/list-sort">
+		<c:param name="sortBy" value="id"/>
+	</c:url>
+	
+	<c:url var="sortByFirstName" value="/client/list-sort">
+		<c:param name="sortBy" value="firstName"/>
+	</c:url>
+	
+	<c:url var="sortByLastName" value="/client/list-sort">
+		<c:param name="sortBy" value="lastName"/>
+	</c:url>
+	
+	<c:url var="sortByCity" value="/client/list-sort">
+		<c:param name="sortBy" value="city"/>
+	</c:url>
+	
+	<c:url var="sortByPoints" value="/client/list-sort">
+		<c:param name="sortBy" value="points"/>
+	</c:url>
+	
+	<c:url var="sortByLoginDate" value="/client/list-sort">
+		<c:param name="sortBy" value="loginDate"/>
+	</c:url>
+	
 	<table>
 				<tr>				
 					<th></th>
-					<th>Client ID</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>City</th>
-					<th>Points</th>
-					<th>Last Login Date</th>
+					<th>										
+						<input type="button" value="Client ID"
+						onclick="showPleaseWait();window.location.href='${sortById}'; return false;" class="buttonSort"/>
+					</th>
+					<th>
+						<input type="button" value="First Name"
+						onclick="showPleaseWait();window.location.href='${sortByFirstName}'; return false;" class="buttonSort"/>	
+					</th>
+					<th>
+						<input type="button" value="Last Name"
+						onclick="showPleaseWait();window.location.href='${sortByLastName}'; return false;" class="buttonSort"/>
+					</th>
+					<th>
+						<input type="button" value="City"
+						onclick="showPleaseWait();window.location.href='${sortByCity}'; return false;" class="buttonSort"/>
+					</th>
+					<th>
+						<input type="button" value="Points"
+						onclick="showPleaseWait();window.location.href='${sortByPoints}'; return false;" class="buttonSort"/>
+					</th>
+					<th>
+						<input type="button" value="Last Login Date"
+						onclick="showPleaseWait();window.location.href='${sortByLoginDate}'; return false;" class="buttonSort"/>
+					</th>
 					<th>[Delete]</th>	
 					<th></th>				
 				</tr>			

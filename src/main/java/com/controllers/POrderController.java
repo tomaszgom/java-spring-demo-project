@@ -66,7 +66,7 @@ public class POrderController {
 	@PostMapping("/pOrderAddForm")
     public String orderAddForm(@RequestParam("clientId") String clientId, Model theModel) {
 		
-		System.out.println("T: orderAddDetails clicked; client: "+clientId);
+//		  System.out.println("Contr Msg: orderAddDetails clicked; client: "+clientId);
 //        List<Client> theClients = clientService.searchClients(srchName);
 //        theModel.addAttribute("clients", theClients);
 //        return "clientsList"; 
@@ -79,14 +79,15 @@ public class POrderController {
 		theporder.setClient(theClient);
 		theModel.addAttribute("porder", theporder); // ("name", value)	
 		
-		System.out.println("Client");
-		System.out.println("ID: "+theporder.getClient().getClient_id());
-		System.out.println("Name: "+theporder.getClient().getLastName());
-		System.out.println("City: "+theporder.getClient().getCity());	
-		System.out.println("Order save");
-		System.out.println("ID: "+theporder.getOrder_id());
-		System.out.println("Product Name: "+theporder.getProductName());
-		System.out.println("Order: "+theporder.getOrderValue());
+/*		System.out.println("Contr Msg: Client");
+		System.out.println("Contr Msg: ID: "+theporder.getClient().getClient_id());
+		System.out.println("Contr Msg: Name: "+theporder.getClient().getLastName());
+		System.out.println("Contr Msg: City: "+theporder.getClient().getCity());	
+		System.out.println("Contr Msg: Order save");
+		System.out.println("Contr Msg: ID: "+theporder.getOrder_id());
+		System.out.println("Contr Msg: Product Name: "+theporder.getProductName());
+		System.out.println("Contr Msg: Order: "+theporder.getOrderValue());
+*/
         
 		return "pOrderAddForm";
     }
@@ -94,14 +95,15 @@ public class POrderController {
 	@PostMapping("/porderSave")
 	public String saveClient(@ModelAttribute("porder") POrder theporder) {
 		
-		System.out.println("Client");
-		System.out.println("ID: "+theporder.getClient().getClient_id());
-		System.out.println("Name: "+theporder.getClient().getLastName());
-//		System.out.println("City: "+theporder.getClient().getCity());	
-		System.out.println("Order save");
-//		System.out.println("ID: "+theporder.getOrder_id());
-		System.out.println("Product Name: "+theporder.getProductName());
-		System.out.println("Order: "+theporder.getOrderValue());
+/*		System.out.println("Contr Msg: Client");
+		System.out.println("Contr Msg: ID: "+theporder.getClient().getClient_id());
+		System.out.println("Contr Msg: Name: "+theporder.getClient().getLastName());
+//		System.out.println("Contr Msg: City: "+theporder.getClient().getCity());	
+		System.out.println("Contr Msg: Order save");
+//		System.out.println("Contr Msg: ID: "+theporder.getOrder_id());
+		System.out.println("Contr Msg: Product Name: "+theporder.getProductName());
+		System.out.println("Contr Msg: Order: "+theporder.getOrderValue());
+*/
 				
 		// Save client with the use of Service
 		pOrderService.savePorder(theporder);	

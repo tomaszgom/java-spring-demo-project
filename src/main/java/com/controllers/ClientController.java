@@ -1,8 +1,11 @@
 package com.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import javax.validation.Valid;
 
@@ -37,10 +40,10 @@ public class ClientController {
 		//private ClientDAO clientDAO;
 	 
 
-	@Autowired		// injection of Client Service
+	@Autowired		// Injection of Client Service
 	private ClientService clientService;
 	
-	@GetMapping("/list") 	//Get handles only GET requests, @RequestMapping handles all
+	@GetMapping("/list") 	// Get handles only GET requests, @RequestMapping handles all
 	public String listClients(Model theModel) {
 		
 		// Get clients from the dao - option with no Service layer	
@@ -48,20 +51,94 @@ public class ClientController {
 		
 		// Get clients from the Service	
 		List<Client> theClients = clientService.getClients();
-				
+		
+		// Sort by ID, by default using custom comparator
+		Collections.sort(theClients, new ClientComparatorById());
+		
 		//	Add the clients to the model
 		theModel.addAttribute("clients", theClients);
 		
-		return "clientsList";
-		
+		return "clientsList";	
 	}
+	
+	@GetMapping("/list-sort") 
+	public String listClientsSorted(@RequestParam("sortBy") String sortBy, Model theModel) {
+		
+		// Get clients from the Service	
+		List<Client> theClients = clientService.getClients();
+		
+		// Sort by based on parameter
+		switch(sortBy) {
+		case "id": Collections.sort(theClients, new ClientComparatorById()); break;
+		case "firstName": Collections.sort(theClients, new ClientComparatorByFirstName()); break;
+		case "lastName": Collections.sort(theClients, new ClientComparatorByLastName()); break;
+		case "city": Collections.sort(theClients, new ClientComparatorByCity()); break;
+		case "points": Collections.sort(theClients, new ClientComparatorByPoints()); break;
+		case "loginDate": Collections.sort(theClients, new ClientComparatorByLoginDate()); break;
+		}
+		
+		//	Add the clients to the model
+		theModel.addAttribute("clients", theClients);
+		
+		return "clientsList";	
+	}
+	
+	// Comparators 
+	
+	public class ClientComparatorById implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+			return Integer.compare(o1.getClient_id(), o2.getClient_id());
+		}	
+	}	
+	public class ClientComparatorByFirstName implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+			 return o1.getFirstName().compareTo(o2.getFirstName());
+		}	
+	}
+	public class ClientComparatorByLastName implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+			 return o1.getLastName().compareTo(o2.getLastName());
+		}	
+	}
+	public class ClientComparatorByCity implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+			 return o1.getCity().compareTo(o2.getCity());
+		}	
+	}
+	public class ClientComparatorByPoints implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+			return Integer.compare(o1.getPoints(), o2.getPoints());
+		}	
+	}
+	public class ClientComparatorByLoginDate implements Comparator<Client>{	
+		@Override
+		public int compare(Client o1, Client o2) {
+		     
+			Date date = o1.getLastLoginDate();
+		    Date date2 = o2.getLastLoginDate();
+		      
+		      if(date==null) {
+		    	  date = new Date(9999, 1, 9);
+		      }
+		      if(date2==null) {
+		    	  date2 = new Date(9999, 1, 9);
+		      }
+		      
+			return date.compareTo(date2);
+		}	
+	}
+	
 	
 	@GetMapping("/formAddClient")
 	public String formAddClient(Model theModel){
 		
 		// Model attribute
 		Client theClient = new Client();
-		// System.out.println(" Client add. ID: "+theClient.getClient_id()+" Name: "+theClient.getLastName());
 		
 		theModel.addAttribute("client", theClient); // ("name", value)
 		
@@ -79,7 +156,6 @@ public class ClientController {
 	}
 	
 	@PostMapping("/saveClient")
-	//public String saveClient(@ModelAttribute("client") Client theClient) {
 	public String saveClient(@Valid @ModelAttribute("client") Client theClient, BindingResult theBindingResult ) {
 		
 		if(theBindingResult.hasErrors()) {

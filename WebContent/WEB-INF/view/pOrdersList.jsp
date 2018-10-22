@@ -48,10 +48,15 @@
 		<input type="button" value="Add Order"
 			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/pOrderAddSelectClient'; return false;"
 			class="button"/>
+			
 		<input type="button" value="Refresh List"
 			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"
 			class="button"/>
-				
+			
+		<input type="button" value="Clients List" 
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/client/list'; return false;"
+			class="button"/>	
+							
 			<!--  html table -->		
 			<table>
 				<tr>				

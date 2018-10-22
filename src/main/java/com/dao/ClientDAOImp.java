@@ -19,11 +19,11 @@ import com.entity.POrder;
 @Repository
 public class ClientDAOImp implements ClientDAO {
 
-	//  Injection of session factory
+	// Injection of session factory
 	@Autowired
 	private SessionFactory sessionFactory;					   
 		
-	@Override //in simpler version, without Service layer @Transactional could be annotated here
+	@Override // In simpler version, without Service layer @Transactional could be annotated here
 	public List<Client> getClients() {
 		
 		// Get current Hibernate session (object from hibernate package)
@@ -81,7 +81,7 @@ public class ClientDAOImp implements ClientDAO {
 		
         // If name is not empty
         if (srchName != null && srchName.trim().length() > 0) {
-            // search by firstName or lastName
+            // Search by firstName or lastName
             theQuery =currentSession.createQuery("from Client where lower(firstName) like :theName or lower(lastName) like :theName", Client.class);
             theQuery.setParameter("theName", "%" + srchName.toLowerCase() + "%");          
         }else {
@@ -129,9 +129,9 @@ public class ClientDAOImp implements ClientDAO {
         	theQuery.setParameter("cliID", theClient);
                            
         List<POrder> ordersResult = theQuery.getResultList();    
-       // List<POrder> ordersResult = theClient.getPOrders();
+        // List<POrder> ordersResult = theClient.getPOrders();
          return ordersResult;
-       // return theClient.getPOrders();
+         // return theClient.getPOrders();
 	}
 
 }

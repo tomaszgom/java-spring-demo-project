@@ -39,7 +39,6 @@ public class MainController {
 		if(Objects.equals(usrLogin, "DemoUser") && Objects.equals(usrPassword, "Password")) {
 			return "redirect:/app/dashboard";			
 		}else {
-			//return "redirect:/app/dashboard";
 			return "access-denied";			
 		}		
 	}
@@ -52,7 +51,6 @@ public class MainController {
 		
 		for (HashMap.Entry<String, Double> entry : stats.entrySet()) {	
 			String stat = String.format("%.1f", entry.getValue()); 
-		
 			statsPrint.put(entry.getKey(), stat);			
 		}
 				

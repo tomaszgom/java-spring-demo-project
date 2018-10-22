@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.sql.*;
 
-/**
+/************************************************
+ * Class for db testing purposes
  * Servlet implementation class testDbServlet
- */
+ ************************************************/
+
 @WebServlet("/testDbServlet")
 public class testDbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +26,6 @@ public class testDbServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		//setup connection variables
@@ -65,15 +66,25 @@ public class testDbServlet extends HttpServlet {
 					
 				//	
 					while(rs.next()){						
-						System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getInt(5));
-					output = output +rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getInt(5)+"\n";
+						System.out.println(rs.getInt(1)+"  "
+										  +rs.getString(2)+"  "
+										  +rs.getString(3)+"  "
+										  +rs.getString(4)+"  "
+										  +rs.getInt(5));
+						
+						output = output + "<br>" 
+						+ rs.getInt(1)+"  "
+						+rs.getString(2)+"  "
+						+rs.getString(3)+"  "
+						+rs.getString(4)+"  "
+						+rs.getInt(5);
 					}
 					//tConnection.close();
 					
 					System.out.println("Done!");
-				// -- PrintWriter
+				
 					PrintWriter out = response.getWriter();
-					out.println("Succesful connection.\n"+output);
+					out.println("Succesful connection.<br>"+output);
 					
 				}
 				catch (SQLException e){

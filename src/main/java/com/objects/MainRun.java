@@ -7,13 +7,17 @@ import java.util.Set;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/******************************
+ * Class for testing purposes *
+ ******************************/
+
 public class MainRun {
 	
 	public static void main (String[] args) {
 		
-			// read the config file
+		// Read the config file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-			// get the bean
+		// Get the bean
 		ClientAccount cAccount = context.getBean("ClientAccountStandard", ClientAccount.class);
 		
 		System.out.println(cAccount.getAccountTypeName());

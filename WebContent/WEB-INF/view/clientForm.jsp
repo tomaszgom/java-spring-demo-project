@@ -46,7 +46,7 @@
 		<form:hidden path="client_id"/>
 
 		<div id="buttons">
-		<input type="submit" value="Back to List" 
+		<input type="submit" value="Clients List" 
 			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/client/list'; return false;"
 			class="button"/>
 			

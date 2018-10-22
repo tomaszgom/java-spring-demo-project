@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 @Scope("singleton") // @Scope("prototype"), singleton is set by default, left for the reference and code clarity
 public class ClientAccountStandard implements ClientAccount {
 	
-		// Configuring dependency injection with @Autowired annotation (Field Option)
+	// Configuring dependency injection with @Autowired annotation (Field Option)
 	@Autowired
 	@Qualifier("cliSubscriptionStandard")
 	private CliSubscription cliSubscription;
 		
-		// Configuring dependency injection with @Autowired annotation (Constructor Option)
+	// Configuring dependency injection with @Autowired annotation (Constructor Option)
 	//	@Autowired
 	//	public ClientAccountStandard (@Qualifier("cliSubscriptionStandard") CliSubscription clientSubscription) {
 	//		cliSubscription = clientSubscription;
@@ -37,7 +37,7 @@ public class ClientAccountStandard implements ClientAccount {
 		return cliSubscription.getSubscriptionName();
 	}
 	
-		//life cycle method annotation, launched at the the start of bean
+	// Life cycle method annotation, launched at the the start of bean
 	@PostConstruct
 	public void CliAccountBeanStart() {
 		System.out.println("Bean Client Account Standard has been created.");

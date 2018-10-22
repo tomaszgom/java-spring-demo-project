@@ -36,8 +36,8 @@ public class POrder {
 	@JoinColumn(name="CLIENT_ID", nullable=false)
 	private Client client;
 	
-	//-- @Column(name="CLIENT_ID")
-	//-- private int client_id;
+	// @Column(name="CLIENT_ID")
+	// private int client_id;
 	
 	@Column(name="ORDER_VALUE")
 	private double orderValue;
