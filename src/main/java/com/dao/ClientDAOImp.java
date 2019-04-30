@@ -1,6 +1,10 @@
 package com.dao;
-//******************
-// NOTES BELOW
+
+/*****************************
+ * Client Data Access Object
+ *****************************/
+/* Spring notes at the end */
+
 
 import java.util.HashMap;
 import java.util.Iterator;
