@@ -14,10 +14,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * PurchaseOrder ORM object, mapped with database, used to handle managing data within application
+ *
+ */
 
 @Entity
 @Table(name="hr.P_ORDER")
-public class POrder {
+public class PurchaseOrder {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator="entity_seq_gen")
@@ -46,19 +52,19 @@ public class POrder {
 	private String productName;
 	
 	@Column(name="ORDER_DATE")
-	private Date porderDate;
+	private Date orderDate;
 
-	public POrder() {}
+	public PurchaseOrder() {}
 		
-	public POrder(double orderValue, String productName) {
+	public PurchaseOrder(double orderValue, String productName) {
 		this.orderValue = orderValue;
 		this.productName = productName;
 	}
 
 	@Override
 	public String toString() {
-		return "POrder [order_id=" + order_id + ", orderValue=" + orderValue
-				+ ", productName=" + productName + ", orderDate=" + porderDate + "]";
+		return "PurchaseOrder [order_id=" + order_id + ", orderValue=" + orderValue
+				+ ", productName=" + productName + ", orderDate=" + orderDate + "]";
 	}
 
 	public int getOrder_id() {
@@ -96,12 +102,12 @@ public class POrder {
 		this.productName = productName;
 	}
 
-	public Date getPorderDate() {
-		return porderDate;
+	public Date getOrderDate() {
+		return orderDate;
 	}
 
-	public void setPorderDate(Date orderDate) {
-		this.porderDate = orderDate;
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
 	}
 
 

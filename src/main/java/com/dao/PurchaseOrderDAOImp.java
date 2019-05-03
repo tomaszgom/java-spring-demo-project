@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 
 @Repository
-public class POrderDAOImp implements POrderDAO {
+public class PurchaseOrderDAOImp implements PurchaseOrderDAO {
 
 	// Injection of session factory
 	@Autowired
@@ -21,15 +21,15 @@ public class POrderDAOImp implements POrderDAO {
 	
 	
 	@Override // In simpler version, without Service layer @Transactional could be annotated here
-	public List<POrder> getPOrders() {
+	public List<PurchaseOrder> getPurchaseOrders() {
 		
 		// Get current Hibernate session (object from Hibernate package)
 		Session currentSession = sessionFactory.getCurrentSession();		
 		// Create a query, execute and get result list
-		Query<POrder> theQuery = currentSession.createQuery("from POrder", POrder.class);	
-		List<POrder> pOrders = theQuery.getResultList();
+		Query<PurchaseOrder> theQuery = currentSession.createQuery("from PurchaseOrder", PurchaseOrder.class);	
+		List<PurchaseOrder> purchaseOrders = theQuery.getResultList();
 		// Return the results
-		return pOrders;
+		return purchaseOrders;
 	}
 
 
@@ -46,7 +46,7 @@ public class POrderDAOImp implements POrderDAO {
 
 
 	@Override
-	public List<Client> orderAddSearchClients(String srchName) {
+	public List<Client> purchaseOrderAddSearchClients(String srchName) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query theQuery = null;
 		
@@ -64,17 +64,17 @@ public class POrderDAOImp implements POrderDAO {
 	}
 	
 	@Override
-	public void savePorder(POrder thePorder) {	
+	public void savePurchaseOrder(PurchaseOrder thePurchaseOrder) {	
 		// Get Hibernate session and save client
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		if(thePorder.getOrder_id() == 0) {
+		if(thePurchaseOrder.getOrder_id() == 0) {
 			// Hibernate checks if this is new object by checking if ID is empty, if so it will insert else it will update
 			// CurrentSession.saveOrUpdate(theClient);
-			currentSession.save(thePorder);	
+			currentSession.save(thePurchaseOrder);	
 		}else{
 			// Saved data as new record
-			currentSession.update(thePorder);
+			currentSession.update(thePurchaseOrder);
 		}
 	}
 }

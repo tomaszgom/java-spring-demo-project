@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.ClientDAO;
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 import com.service.ClientService;
 
 @Controller
@@ -193,18 +193,18 @@ public class ClientController {
 		List<Client> theClients = clientService.searchClients(srchName);
 		theModel.addAttribute("clients", theClients);
 		
-		return "clientsList";        
+		return "clientsList";      
 	}
 	
-	@GetMapping("/pOrders")
-    public String viewClientPOrders(@RequestParam("clientId") int clientId, Model theModel) {
+	@GetMapping("/purchaseOrders")
+    public String viewClientPurchaseOrders(@RequestParam("clientId") int clientId, Model theModel) {
 
 		Client theClient = clientService.getClient(clientId);
 		
-        List<POrder> theOrders = clientService.viewClientPOrders(theClient);
-        theModel.addAttribute("pOrders", theOrders);
+        List<PurchaseOrder> thePurchaseOrders = clientService.viewClientPurchaseOrders(theClient);
+        theModel.addAttribute("purchaseOrders", thePurchaseOrders);
         
-        return "pOrdersList";
+        return "purchaseOrdersList";
     }
 	
 	@GetMapping("/delete")

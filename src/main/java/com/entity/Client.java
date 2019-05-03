@@ -18,6 +18,12 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Client ORM object, mapped with database, used to handle managing data within application
+ *
+ */
 
 @Entity
 @Table(name="hr.CLIENT")
@@ -48,7 +54,7 @@ public class Client {
 	@Column(name="LAST_LOGIN_DATE")
 	private Date lastLoginDate;
 	
-	@OneToMany(mappedBy="client", // reference to Client field in POrder class
+	@OneToMany(mappedBy="client", // reference to Client field in Purchase Order class
 				cascade= {CascadeType.ALL,	 
 							//CascadeType.PERSIST, // Cascade save operations
 							//CascadeType.REMOVE, // Removes all related entities association with this setting when the owning entity is deleted.
@@ -56,28 +62,28 @@ public class Client {
 							//CascadeType.DETACH,
 							//CascadeType.REFRESH,
 							},orphanRemoval = true)//@JoinColumn( name="CLIENT_ID")
-	private List<POrder> pOrders;
+	private List<PurchaseOrder> purchaseOrders;
 
 	public Client() {}
 	
 	// Bi-directional relationship method
-	public void addPOrder(POrder pOrder) {
-		if(pOrders == null) {
-			pOrders = new ArrayList<>();
+	public void addPurchaseOrder(PurchaseOrder purchaseOrder) {
+		if(purchaseOrders == null) {
+			purchaseOrders = new ArrayList<>();
 		}
 		
-		pOrders.add(pOrder);
-		pOrder.setClient(this);
+		purchaseOrders.add(purchaseOrder);
+		purchaseOrder.setClient(this);
 	}
 	
 	// Bi-directional relationship method
-	public void removePOrder(POrder pOrder) {
-		if(pOrders == null) {
+	public void removePurchaseOrder(PurchaseOrder purchaseOrder) {
+		if(purchaseOrders == null) {
 			return;
 		}
 		
-		pOrders.remove(pOrder);
-		pOrder.setClient(this);
+		purchaseOrders.remove(purchaseOrder);
+		purchaseOrder.setClient(this);
 	}
 	
 	@Override
@@ -86,12 +92,12 @@ public class Client {
 				+ city + ", points=" + points + ", lastLoginDate=" + lastLoginDate + "]";
 	}
 	
-	public List<POrder> getPOrders(){
-		return pOrders;
+	public List<PurchaseOrder> getPurchaseOrders(){
+		return purchaseOrders;
 	}
 	
-	public void setPOrsers(List<POrder> pOrders) {
-		this.pOrders = pOrders;
+	public void setPOrsers(List<PurchaseOrder> purchaseOrders) {
+		this.purchaseOrders = purchaseOrders;
 	}
 
 	public int getClient_id() {

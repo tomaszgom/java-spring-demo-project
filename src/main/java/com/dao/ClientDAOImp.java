@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 
 @Repository
 public class ClientDAOImp implements ClientDAO {
@@ -95,29 +95,33 @@ public class ClientDAOImp implements ClientDAO {
         List<Client> clientsResult = theQuery.getResultList();       
         return clientsResult;
 	}
+	
+	
+	/** Querying Clients and Purchase orders stats **/
+	
 	@Override
 	public HashMap<String, Double> getStats() {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		Query totalClients = null;
-		Query totalOrders = null;
+		Query totalPurchaseOrders = null;
 		Query maxClientsPoints = null;
-		Query avgOrderValue = null;	
+		Query avgPurchaseOrderValue = null;	
 	    HashMap<String, Double> stats = new HashMap();
 	      
 	    totalClients = currentSession.createQuery("select count(*) from Client");        
-	    totalOrders = currentSession.createQuery("select count(*) from POrder");
+	    totalPurchaseOrders = currentSession.createQuery("select count(*) from PurchaseOrder");
 	    maxClientsPoints = currentSession.createQuery("select max(points) from Client");
-	    avgOrderValue = currentSession.createQuery("select avg(orderValue) from POrder");
+	    avgPurchaseOrderValue = currentSession.createQuery("select avg(orderValue) from PurchaseOrder");
             
         Double totCli = ((Long) (totalClients.uniqueResult())).doubleValue();
-        Double totOrd = ((Long) (totalOrders.uniqueResult())).doubleValue();
+        Double totOrd = ((Long) (totalPurchaseOrders.uniqueResult())).doubleValue();
         Double maxCliPo = ((Integer) (maxClientsPoints.uniqueResult())).doubleValue();
-        Double avgOrdVal = ((Double) (avgOrderValue.uniqueResult())).doubleValue();
+        Double avgOrdVal = ((Double) (avgPurchaseOrderValue.uniqueResult())).doubleValue();
             
         stats.put("totalClients", totCli); 
-        stats.put("totalOrders", totOrd);
+        stats.put("totalPurchaseOrders", totOrd);
         stats.put("maxClientsPoints", maxCliPo);
         stats.put("avgOrderValue", avgOrdVal);
              
@@ -125,17 +129,17 @@ public class ClientDAOImp implements ClientDAO {
 	}
 
 	@Override
-	public List<POrder> viewClientPOrders(Client theClient) {
+	public List<PurchaseOrder> viewClientPurchaseOrders(Client theClient) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query theQuery = null;
 		
-            theQuery =currentSession.createQuery("from POrder where client=:cliID", POrder.class);
+            theQuery =currentSession.createQuery("from PurchaseOrder where client=:cliID", PurchaseOrder.class);
         	theQuery.setParameter("cliID", theClient);
                            
-        List<POrder> ordersResult = theQuery.getResultList();    
-        // List<POrder> ordersResult = theClient.getPOrders();
-         return ordersResult;
-         // return theClient.getPOrders();
+        List<PurchaseOrder> purchaseOrdersResult = theQuery.getResultList();    
+        // List<PurchaseOrder> ordersResult = theClient.getPurchaseOrders();
+         return purchaseOrdersResult;
+         // return theClient.getPurchaseOrders();
 	}
 
 }

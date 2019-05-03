@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.ClientDAO;
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 
 @Service  // Adding the annotation to service implementation
 public class ClientServiceImp implements ClientService {
@@ -57,8 +57,8 @@ public class ClientServiceImp implements ClientService {
 
 	@Override
 	@Transactional
-	public List<POrder> viewClientPOrders(Client theClient) {
-		return clientDAO.viewClientPOrders(theClient);
+	public List<PurchaseOrder> viewClientPurchaseOrders(Client theClient) {
+		return clientDAO.viewClientPurchaseOrders(theClient);
 	}
 
 

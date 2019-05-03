@@ -3,7 +3,7 @@ package com.service;
 import java.util.HashMap;
 import java.util.List;
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 
 public interface ClientService {
 
@@ -19,6 +19,6 @@ public interface ClientService {
 	
 	public HashMap<String, Double> getStats();
 
-	public List<POrder> viewClientPOrders(Client theClient);
+	public List<PurchaseOrder> viewClientPurchaseOrders(Client theClient);
 
 }

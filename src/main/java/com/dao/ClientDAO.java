@@ -3,7 +3,7 @@ package com.dao;
 import java.util.HashMap;
 import java.util.List;
 import com.entity.Client;
-import com.entity.POrder;
+import com.entity.PurchaseOrder;
 
 public interface ClientDAO {
 
@@ -19,6 +19,6 @@ public interface ClientDAO {
 
 	public HashMap<String, Double> getStats();
 
-	public List<POrder> viewClientPOrders(Client theClient);
+	public List<PurchaseOrder> viewClientPurchaseOrders(Client theClient);
 	
 }
