@@ -17,6 +17,14 @@ import com.dao.ClientDAO;
 import com.entity.Client;
 import com.service.ClientService;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Main Controller class handling navigation and control for main application
+ * views like welcome, goodbye and main dashboard view
+ *
+ */
+
 @Controller
 @RequestMapping("/app")
 public class MainController {

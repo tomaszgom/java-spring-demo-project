@@ -10,6 +10,13 @@ import com.dao.PurchaseOrderDAO;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Application Service layer for Purchase Order object interface implementation
+ *
+ */
+
 @Service  // We add the annotation to service implementation
 public class PurchaseOrderServiceImp implements PurchaseOrderService {
 	

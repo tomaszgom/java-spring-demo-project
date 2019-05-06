@@ -12,6 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Purchase Order Data Access Object interface Implementation
+ * 
+ */
+
 @Repository
 public class PurchaseOrderDAOImp implements PurchaseOrderDAO {
 

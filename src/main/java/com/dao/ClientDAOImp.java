@@ -1,11 +1,5 @@
 package com.dao;
 
-/*****************************
- * Client Data Access Object
- *****************************/
-/* Spring notes at the end */
-
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.entity.Client;
 import com.entity.PurchaseOrder;
+
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Client Data Access Object interface Implementation
+ * (Some Spring notes at the end)
+ */
 
 @Repository
 public class ClientDAOImp implements ClientDAO {

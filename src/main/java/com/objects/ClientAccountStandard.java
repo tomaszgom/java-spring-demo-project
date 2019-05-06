@@ -8,6 +8,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Client Account Object Bean interface implementation
+ *
+ */
+
 @Component("ClientAccountStandard")
 @Scope("singleton") // @Scope("prototype"), singleton is set by default, left for the reference and code clarity
 public class ClientAccountStandard implements ClientAccount {

@@ -5,6 +5,13 @@ import java.util.List;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Client Data Access Object interface
+ * 
+ */
+
 public interface ClientDAO {
 
 	public List<Client> getClients();

@@ -29,13 +29,19 @@ import com.entity.Client;
 import com.entity.PurchaseOrder;
 import com.service.ClientService;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Client Controller class handling navigation and control for views associated with
+ * Client which is one of application entities
+ *
+ */
+
 @Controller
 @RequestMapping("/client")
 public class ClientController {
 
-		/*** Dismissed (left for reference) ***
-		/*** inject the DAO Client - injecting DAO directly in case service layer is not used
-		/*** Spring scans for the components that implements DAO interface, DAOImp will be injected */	
+		/*** Injecting Client DAO directly in case service layer is not used */
 		//@Autowired
 		//private ClientDAO clientDAO;
 	 

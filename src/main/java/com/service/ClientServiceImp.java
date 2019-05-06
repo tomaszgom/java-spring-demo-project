@@ -11,6 +11,13 @@ import com.dao.ClientDAO;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Application Service layer for Client object interface implementation
+ *
+ */
+
 @Service  // Adding the annotation to service implementation
 public class ClientServiceImp implements ClientService {
 	

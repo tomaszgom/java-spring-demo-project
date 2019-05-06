@@ -17,6 +17,14 @@ import com.entity.PurchaseOrder;
 import com.service.ClientService;
 import com.service.PurchaseOrderService;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Purchase Order Controller class handling navigation and control for views
+ * associated with Purchase Order application entity
+ *
+ */
+
 @Controller
 @RequestMapping("/purchaseOrder")
 public class PurchaseOrderController {

@@ -5,6 +5,13 @@ import java.util.List;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Purchase Order Data Access Object interface
+ * 
+ */
+
 public interface PurchaseOrderDAO {
 
 	public List<PurchaseOrder> getPurchaseOrders();

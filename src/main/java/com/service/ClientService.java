@@ -5,6 +5,13 @@ import java.util.List;
 import com.entity.Client;
 import com.entity.PurchaseOrder;
 
+/**
+ * 
+ * @author Tomasz Gomoradzki
+ * Application Service layer interface for Client object
+ *
+ */
+
 public interface ClientService {
 
 	public List<Client> getClients();
