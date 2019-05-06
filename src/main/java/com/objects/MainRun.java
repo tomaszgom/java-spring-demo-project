@@ -7,9 +7,9 @@ import java.util.Set;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/******************************
+/**
  * Working class for testing purposes, left for reference *
- ******************************/
+ */
 
 public class MainRun {
 	

@@ -43,9 +43,9 @@ function checkSelectedClient() {
 		}						
 	}
 
-function pOrderAddSearchClient(){
-    document.pOrder.action = "pOrderAddSearchClient";
-    document.pOrder.submit();
+function purchaseOrderAddSearchClient(){
+    document.purchaseOrder.action = "purchaseOrderAddSearchClient";
+    document.purchaseOrder.submit();
     return true;
 }
 

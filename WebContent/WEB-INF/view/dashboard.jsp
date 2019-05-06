@@ -24,7 +24,7 @@
 	<tbody>						
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/purchaseOrder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
@@ -70,13 +70,13 @@
 				<tr>				
 					<th>
 						<input type="button" value="Review Orders"
-							onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"
+							onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/purchaseOrder/list'; return false;"
 							class="dashboardButton"
 						/>			
 					</th>					
 					<th>
 						<input type="button" value="Add Order"
-							onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/pOrderAddSelectClient'; return false;"
+							onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/purchaseOrder/purchaseOrderAddSelectClient'; return false;"
 							class="dashboardButton"
 						/>
 					</th>

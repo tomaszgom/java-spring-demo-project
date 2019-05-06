@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * 
  * @author Tomasz Gomoradzki
  * Product ORM object, mapped with database, used to handle managing data within application
- * Product is in one to many relation with PurchaseOrder
+ * Product is in one-to-many relation with PurchaseOrder
  *
  */
 
@@ -34,75 +34,88 @@ public class Product {
 	
 	@ManyToOne (fetch = FetchType.LAZY, cascade= {CascadeType.ALL})
 	@JoinColumn(name="PRODUCT_ID", nullable=false)
-	private Client client;
+	private PurchaseOrder purchaseOrder;
+		
+	@Column(name="NAME")
+	private String name;
 	
-	// @Column(name="CLIENT_ID")
-	// private int client_id;
+	@Column(name="CATEGORY")
+	private String category;
 	
-	@Column(name="ORDER_VALUE")
-	private double orderValue;
+	@Column(name="STATUS")
+	private String status;
 	
-	@Column(name="PRODUCT_NAME")
-	private String productName;
+	@Column(name="DATE_ADDED")
+	private Date dateAdded;
 	
-	@Column(name="ORDER_DATE")
-	private Date orderDate;
 
 	public Product() {}
 		
-	public Product(double orderValue, String productName) {
-		this.orderValue = orderValue;
-		this.productName = productName;
+	public Product(String name, Date dateAdded) {
+		this.dateAdded = dateAdded;
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "PurchaseOrder [order_id=" + product_id + ", orderValue=" + orderValue
-				+ ", productName=" + productName + ", orderDate=" + orderDate + "]";
+		return "Product [order_id=" + product_id + ", Name=" + name
+				+ ", Product Status=" + status + ", Date Added=" + dateAdded + "]";
 	}
 
-	public int getOrder_id() {
+	
+	
+	public int getProduct_id() {
 		return product_id;
 	}
 
-	public void setOrder_id(int order_id) {
-		this.product_id = order_id;
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
 	}
 
-	public Client getClient() {
-		return client;
+	public PurchaseOrder getPurchaseOrder() {
+		return purchaseOrder;
 	}
-	public int getClientID() {
-		return client.getClient_id();
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
+	public int getPurchaseOrderID() {
+		return purchaseOrder.getOrder_id();
 	}
 
-	public double getOrderValue() {
-		return orderValue;
+	public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
 	}
 
-	public void setOrderValue(double orderValue) {
-		this.orderValue = orderValue;
+	
+	public String getName() {
+		return name;
 	}
 
-	public String getProductName() {
-		return productName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public String getCategory() {
+		return category;
 	}
 
-	public Date getOrderDate() {
-		return orderDate;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+	public String getStatus() {
+		return status;
 	}
 
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getDateAdded() {
+		return dateAdded;
+	}
+
+	public void setDateAdded(Date dateAdded) {
+		this.dateAdded = dateAdded;
+	}
+
+	
 
 }

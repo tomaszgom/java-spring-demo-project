@@ -20,7 +20,7 @@
 	<tbody>						
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/purchaseOrder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
@@ -39,7 +39,7 @@
 	</div>
 	<div><br></div>
 	<div id="container">	
-		 <form:form action="porderSave" modelAttribute="porder" method="POST">
+		 <form:form action="purchaseOrderSave" modelAttribute="purchaseOrder" method="POST">
 		 <!-- match data with client ID hidden form field, get from Client -->
 		 <form:hidden path="order_id"/> 
 		 <form:hidden path="client.client_id"/>
@@ -47,7 +47,7 @@
 
 		<div id="buttons">
 		<input type="submit" value="Back to List" 
-			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/purchaseOrder/list'; return false;"
 			class="button"/>
 		<input type="submit" value="Save" class="button" onclick="showPleaseWait()"/>
 		<div><br></div>
@@ -113,10 +113,10 @@
     					$( "#datepicker" ).datepicker();
   						} );
   					</script>
-					 <%-- <p><form:input type="text" id="datepicker" class="inputtxtbox" path="porderDate" /></p> --%>
+					 <%-- <p><form:input type="text" id="datepicker" class="inputtxtbox" path="orderDate" /></p> --%>
 					 <p>
 					 <%--<fmt:formatDate pattern = "yyyy/MM/dd" value = "${now}"/>--%>
-					<form:input type="text" id="datepicker" class="inputtxtbox" path="porderDate" /> 
+					<form:input type="text" id="datepicker" class="inputtxtbox" path="orderDate" /> 
 					 </p>		
 					</td>
 					</tr>
@@ -124,7 +124,7 @@
 						<td>
 						<%--
 						<fmt:formatDate value="${yourObject.date}" var="dateString" pattern="dd/MM/yyyy" />
-						<form:input type="date" path="porderDate" value="${dateString}"/>
+						<form:input type="date" path="orderDate" value="${dateString}"/>
  						--%>
 						</td>
 					</tr>

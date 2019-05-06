@@ -23,7 +23,7 @@
 	<tbody>						
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/purchaseOrder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
@@ -46,11 +46,11 @@
 			
 			<!-- this call Spring controller mapping 'showForm...' -->
 		<input type="button" value="Add Order"
-			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/pOrderAddSelectClient'; return false;"
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/purchaseOrder/purchaseOrderAddSelectClient'; return false;"
 			class="button"/>
 			
 		<input type="button" value="Refresh List"
-			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/porder/list'; return false;"
+			onclick="showPleaseWait();window.location.href='${pageContext.request.contextPath}/purchaseOrder/list'; return false;"
 			class="button"/>
 			
 		<input type="button" value="Clients List" 
@@ -68,7 +68,7 @@
 					<th></th>
 				</tr>			
 				<!-- loop over and print our clients 'clients' is the attribute name from MVC Model -->
-				<c:forEach var="tempOrder" items="${pOrders}">	
+				<c:forEach var="tempOrder" items="${purchaseOrders}">	
 									
 					<c:url var="modifyLink" value="/client/formEditClient">
 						<c:param name="clientId" value="${tempOrder.clientID}"/>
@@ -78,7 +78,7 @@
 						<td> ${tempOrder.order_id} </td>	
 						<td> ${tempOrder.orderValue} </td>
 						<td> ${tempOrder.productName} </td>	
-						<td> ${tempOrder.porderDate} </td>	
+						<td> ${tempOrder.orderDate} </td>	
 						<td> ${tempOrder.clientID} </td>	
 						<td><a href="${modifyLink}">View Client Details</a></td>													
 					</tr>

@@ -33,76 +33,136 @@ public class Transaction {
 	private int transaction_id;
 	
 	@ManyToOne (fetch = FetchType.LAZY, cascade= {CascadeType.ALL})
-	@JoinColumn(name="CLIENT_ID", nullable=false)
-	private Client client;
+	@JoinColumn(name="TRANSACTION_ID", nullable=false)
+	private PurchaseOrder purchaseOrder;
 	
-	// @Column(name="CLIENT_ID")
-	// private int client_id;
+	@Column(name="NET")
+	private double net;
 	
-	@Column(name="ORDER_VALUE")
-	private double orderValue;
+	@Column(name="VAT")
+	private double vat;
 	
-	@Column(name="PRODUCT_NAME")
-	private String productName;
+	@Column(name="GROSS")
+	private double gross;
 	
-	@Column(name="ORDER_DATE")
-	private Date orderDate;
+	@Column(name="DESC")
+	private String desc;
+	
+	@Column(name="STATUS")
+	private String status;
+	
+	@Column(name="TYPE")
+	private String type;
+	
+	@Column(name="DATE_CREATED")
+	private Date dateCreated;
 
 	public Transaction() {}
 		
-	public Transaction(double orderValue, String productName) {
-		this.orderValue = orderValue;
-		this.productName = productName;
+		
+	public Transaction(int transaction_id, PurchaseOrder purchaseOrder, String type, Date dateCreated) {
+		this.transaction_id = transaction_id;
+		this.purchaseOrder = purchaseOrder;
+		this.type = type;
+		this.dateCreated = dateCreated;
 	}
 
 	@Override
 	public String toString() {
-		return "PurchaseOrder [transaction_id=" + transaction_id + ", orderValue=" + orderValue
-				+ ", productName=" + productName + ", orderDate=" + orderDate + "]";
+		return "Transaction [transaction_id=" + transaction_id + ", desc=" + desc + ", status=" + status + ", type="
+				+ type + "]";
 	}
+
 
 	public int getTransaction_id() {
 		return transaction_id;
 	}
 
-	public void setTransaction_id(int order_id) {
-		this.transaction_id = order_id;
+
+	public void setTransaction_id(int transaction_id) {
+		this.transaction_id = transaction_id;
 	}
 
-	public Client getClient() {
-		return client;
-	}
-	public int getClientID() {
-		return client.getClient_id();
+
+	public PurchaseOrder getPurchaseOrder() {
+		return purchaseOrder;
 	}
 
-	public void setClient(Client client) {
-		this.client = client;
+
+	public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
 	}
 
-	public double getOrderValue() {
-		return orderValue;
+
+	public double getNet() {
+		return net;
 	}
 
-	public void setOrderValue(double orderValue) {
-		this.orderValue = orderValue;
+
+	public void setNet(double net) {
+		this.net = net;
 	}
 
-	public String getProductName() {
-		return productName;
+
+	public double getVat() {
+		return vat;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+
+	public void setVat(double vat) {
+		this.vat = vat;
 	}
 
-	public Date getOrderDate() {
-		return orderDate;
+
+	public double getGross() {
+		return gross;
 	}
 
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+
+	public void setGross(double gross) {
+		this.gross = gross;
 	}
 
+
+	public String getDesc() {
+		return desc;
+	}
+
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+	
+	
 
 }

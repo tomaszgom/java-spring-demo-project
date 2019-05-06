@@ -23,7 +23,7 @@
 	<tbody>						
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/dashboard" onclick="showPleaseWait()">Dashboard</a></td></tr>				
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/client/list" onclick="showPleaseWait()">Clients List</a></td></tr>
-		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/porder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
+		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/purchaseOrder/list" onclick="showPleaseWait()">Orders List</a></td></tr>
 		<tr class="naviItem" ><td><a href="${pageContext.request.contextPath}/app/goodbye" onclick="showPleaseWait()">Log out</a></td></tr>															
   	</tbody>
   	</table>
@@ -45,21 +45,21 @@
 <div id="container">
 <div id="content">
 <div>				    					
-	<form name="pOrder" id="formpOrderAddForm1" action="pOrderAddForm" method="POST"> 
-	<%-- <form name="pOrder" id="formpOrderAddForm" method="POST"> --%>
+	<form name="purchaseOrder" id="formpurchaseOrderAddForm1" action="purchaseOrderAddForm" method="POST"> 
+	<%-- <form name="purchaseOrder" id="formpurchaseOrderAddForm" method="POST"> --%>
 		
 	<%-- Search box --%>
-	<%-- Form action="pOrderAddSearchClient" method="POST" --%>
+	<%-- Form action="purchaseOrderAddSearchClient" method="POST" --%>
     <input type="text" name="srchName" class="inputtxtbox" placeholder="Enter client's name..." />               
-    <input type="button" value="Search" class="button" onclick="return pOrderAddSearchClient();" />           
+    <input type="button" value="Search" class="button" onclick="return purchaseOrderAddSearchClient();" />           
 	
-	<%-- Form  Submit action="pOrderAddForm" --%>
+	<%-- Form  Submit action="purchaseOrderAddForm" --%>
 	<input type="submit" value="Next" class="button" onclick="return checkSelectedClient();"/>	
 	
 		
 <script>
 	$(document).ready(function(){
-		$('#formpOrderAddFrom1').submit(function() {			
+		$('#formpurchaseOrderAddFrom1').submit(function() {			
 		return checkSelectedClient();
 	});
 	}); 
