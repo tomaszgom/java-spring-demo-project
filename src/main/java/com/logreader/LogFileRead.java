@@ -43,7 +43,7 @@ public class LogFileRead {
      			try {
      				 eventEntry = objectMapper.readValue(line, EventEntry.class);     								
      			}catch (JsonParseException e) { 
-     				JOptionPane.showMessageDialog(null, AppMessages.WrongJSONrecordFormat.getText() + "\n" + e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);  				
+     				JOptionPane.showMessageDialog(null, ReaderMessages.WrongJSONrecordFormat.getText() + "\n" + e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);  				
      				logger.debug("Unexpected file format. Line could not be parsed to JSON object.");
      				e.printStackTrace();
      				System.exit(0);               

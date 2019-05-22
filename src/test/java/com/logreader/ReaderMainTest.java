@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class AppMainTest {
+public class ReaderMainTest {
 	
 	@Test
 	public void testLoadAppProperties_PropertyJDBCDriverAvailable() {
-		AppMain.LoadAppProperties();
-		assertTrue(AppMain.properties.getProperty("hsqldbJDBCDriver")!=null);
+		ReaderMain.LoadAppProperties();
+		assertTrue(ReaderMain.properties.getProperty("hsqldbJDBCDriver")!=null);
 	}
 	
 	@Test
 	public void testLoadAppProperties_PropertyConnectionStringAvailable() {
-		AppMain.LoadAppProperties();
-		assertTrue(AppMain.properties.getProperty("dbConnectionString")!=null);
+		ReaderMain.LoadAppProperties();
+		assertTrue(ReaderMain.properties.getProperty("dbConnectionString")!=null);
 	}
 
 }

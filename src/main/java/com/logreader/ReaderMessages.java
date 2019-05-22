@@ -1,6 +1,6 @@
 package com.logreader;
 
-public enum AppMessages {
+public enum ReaderMessages {
 	
 	/*** Enumerator storing Application messages codes and messages ***/
 	
@@ -20,7 +20,7 @@ public enum AppMessages {
 	private final int code;
 	private final String text;
 
-	private AppMessages(int code, String text) {
+	private ReaderMessages(int code, String text) {
 	    this.code = code;
 	    this.text = text;
 	}

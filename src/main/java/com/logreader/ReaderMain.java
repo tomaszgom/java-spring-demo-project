@@ -27,9 +27,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
  
-public final class AppMain extends Application {
+public final class ReaderMain extends Application {
 
-	private final static Logger logger = Logger.getLogger(AppMain.class.getName());
+	private final static Logger logger = Logger.getLogger(ReaderMain.class.getName());
 	
 	static public Properties properties = new Properties();
 	static LogFileRead fileRead = new LogFileRead();
@@ -50,10 +50,10 @@ public final class AppMain extends Application {
     	
     	// Setup GUI    	
     	final FileChooser fileChooser = new FileChooser();
-        stage.setTitle(AppMessages.AppTitle.getText());
+        stage.setTitle(ReaderMessages.AppTitle.getText());
         final Button openButton = new Button("  Select File  ");
         final Button closeButton = new Button("     Close     "); 
-        final Label appMessage = new Label(AppMessages.MainLabelMsg.getText());
+        final Label appMessage = new Label(ReaderMessages.MainLabelMsg.getText());
         		      
         
         // Open File Action       
@@ -69,7 +69,7 @@ public final class AppMain extends Application {
                     	return;
                     }else if(!(file.exists() && !file.isDirectory())) { 
                     	logger.debug("Selected file has not been found.");
-                    	JOptionPane.showMessageDialog(null, AppMessages.FileNotExist.getText(),"Error", JOptionPane.ERROR_MESSAGE);  				
+                    	JOptionPane.showMessageDialog(null, ReaderMessages.FileNotExist.getText(),"Error", JOptionPane.ERROR_MESSAGE);  				
                       	return;
                 	}
                                   	

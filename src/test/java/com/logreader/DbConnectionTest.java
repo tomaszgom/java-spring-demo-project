@@ -27,7 +27,7 @@ public class DbConnectionTest {
 	
 	@BeforeClass
 	public static void LoadAppProperties() {	
-		AppMain.LoadAppProperties();
+		ReaderMain.LoadAppProperties();
 	}
 		
 	@BeforeClass
@@ -70,7 +70,7 @@ public class DbConnectionTest {
         dbConnection.CreateEventTable();
 		
 		try {		
-			conn = DriverManager.getConnection(AppMain.properties.getProperty("dbConnectionString"), "SA", "");
+			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");
     		    		
 			PreparedStatement prepStmnt = conn.prepareStatement("select * from event where ID='" + testRecId+"'");
 			prepStmnt.clearParameters();
