@@ -21,8 +21,8 @@ import javax.persistence.Table;
  *
  */
 
-@Entity
-@Table(name="hr.BANKDETAIL")
+//@Entity
+//@Table(name="hr.BANKDETAIL")
 public class BankDetail {
 	
 	@Id

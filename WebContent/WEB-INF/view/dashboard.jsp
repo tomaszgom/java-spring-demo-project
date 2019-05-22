@@ -100,7 +100,7 @@
 				</tr>			
 				<tr class="stats" >
 					<th>Total Number of Orders</th>
-					<th>${stats['totalOrders']}</th>									
+					<th>${stats['totalPurchaseOrders']}</th>									
 				</tr>		
 				<tr class="stats" >
 					<th>Avg Order Value</th>

@@ -19,6 +19,7 @@ import com.entity.PurchaseOrder;
  * @author Tomasz Gomoradzki
  * Client Data Access Object interface Implementation
  * (Some Spring notes at the end)
+ *
  */
 
 @Repository
@@ -115,12 +116,14 @@ public class ClientDAOImp implements ClientDAO {
 	    totalPurchaseOrders = currentSession.createQuery("select count(*) from PurchaseOrder");
 	    maxClientsPoints = currentSession.createQuery("select max(points) from Client");
 	    avgPurchaseOrderValue = currentSession.createQuery("select avg(orderValue) from PurchaseOrder");
-            
+	    
+	    
         Double totCli = ((Long) (totalClients.uniqueResult())).doubleValue();
         Double totOrd = ((Long) (totalPurchaseOrders.uniqueResult())).doubleValue();
         Double maxCliPo = ((Integer) (maxClientsPoints.uniqueResult())).doubleValue();
         Double avgOrdVal = ((Double) (avgPurchaseOrderValue.uniqueResult())).doubleValue();
-            
+       
+        
         stats.put("totalClients", totCli); 
         stats.put("totalPurchaseOrders", totOrd);
         stats.put("maxClientsPoints", maxCliPo);

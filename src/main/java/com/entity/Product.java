@@ -22,8 +22,8 @@ import javax.persistence.Table;
  *
  */
 
-@Entity
-@Table(name="hr.PRODUCT")
+//@Entity
+//@Table(name="hr.PRODUCT")
 public class Product {
 	
 	@Id

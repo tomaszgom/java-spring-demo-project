@@ -62,10 +62,7 @@ public class MainController {
 		}
 				
         theModel.addAttribute("stats", statsPrint);
-              
-//        System.out.println("Total Clients: ");
-//        System.out.println(stats.get("totalClients"));
-        
+                     
 		return "dashboard";
 	}
 	
