@@ -12,23 +12,21 @@ Technologies used and some of the concepts deployed:
 - Spring Framework Release 5.0.1.
 - Hibernate Release 5.2.12.
 - Apache Tomcat 8.0 Application Server
-- JSP, HTML, CSS
-- Javascript
-- jQuery JavaScript Library v3.3.1
-- XML
-- Oracle Database XE 11.2 - SQL DDL code necessary to re-create the database with all components (Tables, sequences, triggers) is available within 	below project directory:
-	JavaSpringDemoProject\WebContent\resources\sql\fullDatabaseExport.sql
-
-- CRUD Concept Application (Create, Read, Update, Delete)
-- Hibernate Annotations and Mappings
-- Model View Controller
+- JSP, HTML, CSS, XML
+- Javascript, jQuery JavaScript Library v3.3.1
+- Logger log4j
+- JUnit Test Classes
+- Oracle Database XE 11.2 - SQL DDL code necessary to re-create the database with all components (Tables, sequences, triggers)  
+  is available within below project directory: JavaSpringDemoProject\WebContent\resources\sql\fullDatabaseExport.sql
+- Hibernate Annotations and Mappings, Hibernate Object Class, HQL
+- Model View Controller architectural pattern
 - Inversion of Control with Java Annotations
 - Dependency Injection with Java Annotations (Field and Constructor Injection)
 - Bean Scopes and Life-cycle Methods
-- Service Layer between Controller and DAO (Facade Design pattern) (Intermediate layer for business logic, can be used to integrate data for 	multiple sources)
-- DAO Data Access Object
-- Hibernate Object Class
-- HQL
-- Hibernate Validator (Annotations)
+- DAO (Data Access Object)
+- Service Layer between Controller and DAO (Facade Design pattern) (Intermediate layer for business logic, can be used to integrate data with multiple sources)
+- Maven (coming soon)
+- Spring Boot (coming soon)
+- AOP (Aspect Oriented Programming) (coming soon)
 
 
