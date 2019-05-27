@@ -13,6 +13,7 @@ Technologies used and some of the concepts deployed:
 - Hibernate Release 5.2.12.
 - Apache Tomcat 8.0 Application Server
 - JSP, HTML, CSS, XML
+- Maven
 - Javascript, jQuery JavaScript Library v3.3.1
 - Logger log4j
 - JUnit Test Classes
@@ -25,7 +26,6 @@ Technologies used and some of the concepts deployed:
 - Bean Scopes and Life-cycle Methods
 - DAO (Data Access Object)
 - Service Layer between Controller and DAO (Facade Design pattern) (Intermediate layer for business logic, can be used to integrate data with multiple sources)
-- Maven (coming soon)
 - Spring Boot (coming soon)
 - AOP (Aspect Oriented Programming) (coming soon)
 
