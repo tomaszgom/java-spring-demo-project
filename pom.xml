@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
-  <groupId>JavaSpringDemoProject</groupId>
-  <artifactId>JavaSpringDemoProject</artifactId>
+  <groupId>java-spring-demo-project</groupId>
+  <artifactId>java-spring-demo-project</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   
-	<!-- ********* Properties ********* -->
+	<!-- *** Properties *** -->
   
   	<properties>
 		<springframework.version>5.1.5.RELEASE</springframework.version>
@@ -19,7 +19,7 @@
 	</properties>
   
   
-   <!-- ********* Dependencies ********* -->
+   <!-- *** Dependencies *** -->
    
      <dependencies>
 
@@ -107,7 +107,7 @@
   
   
   
-   <!-- ********* Build ********* -->
+   <!-- *** Build *** -->
   <build>
     <resources>
       <resource>
@@ -127,7 +127,7 @@
       </testResource>
     </testResources>
     
-    <!-- ********* Plugins ********* -->
+    <!-- *** Plugins *** -->
     <plugins>
     
     <!-- Builds a Web Application Archive (WAR) file from the project output 

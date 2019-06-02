@@ -37,7 +37,6 @@ public class MainController {
 	@GetMapping("/welcome")
 	public String welcomeView (Model theModel) {
 		
-		System.out.println("G: Welcome");
 		return "welcome";
 	}
 	
