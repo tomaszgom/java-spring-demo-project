@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.entity.Client;
 import com.entity.PurchaseOrder;
 import com.service.ClientService;
 import com.service.PurchaseOrderService;
