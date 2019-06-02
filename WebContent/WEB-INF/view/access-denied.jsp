@@ -16,7 +16,7 @@
 </div>
 		<div id="header0">		
 			<br><br>
-			<h2>Login or password are incorrect</h2>		
+			<h2>Login or password is incorrect.</h2>		
 			<br><br>
 		<input type="button" value="Log in again"
 				onclick="showPleaseWait(); window.location.href='welcome'; return false;"
