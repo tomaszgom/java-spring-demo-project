@@ -1,4 +1,4 @@
-package com.logreader;
+package com.extfilereader;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
