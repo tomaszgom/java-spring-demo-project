@@ -1,4 +1,4 @@
-package com.logreader;
+package com.extfilereader;
 
 import java.io.BufferedReader;
 import java.io.File;

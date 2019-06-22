@@ -1,4 +1,4 @@
-package com.logreader;
+package com.extfilereader;
 
 public class EventEntry {
 	

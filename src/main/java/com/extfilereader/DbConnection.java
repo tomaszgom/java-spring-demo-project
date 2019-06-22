@@ -1,4 +1,4 @@
-package com.logreader;
+package com.extfilereader;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

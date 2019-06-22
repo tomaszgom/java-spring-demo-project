@@ -13,6 +13,11 @@ import java.util.HashMap;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.extfilereader.DbConnection;
+import com.extfilereader.Event;
+import com.extfilereader.EventEntry;
+import com.extfilereader.ReaderMain;
+
 public class DbConnectionTest {
 
 	static DbConnection dbConnection = new DbConnection();

@@ -11,6 +11,10 @@ import org.hamcrest.collection.IsMapContaining;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.extfilereader.Event;
+import com.extfilereader.EventEntry;
+import com.extfilereader.LogFileRead;
+
 public class LogFileReadTest {
 		
 	static LogFileRead fileRead = new LogFileRead();		
