@@ -1,4 +1,4 @@
-package com.objects;
+package com.components;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

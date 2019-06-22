@@ -9,8 +9,8 @@
 
 
 	<!-- enable component scanning -->
-	<context:component-scan base-package="com.objects"/> 
-    
+	<context:component-scan base-package="com.components"/>
+	<context:component-scan base-package="com.pricing"/>   
     
 </beans>
 

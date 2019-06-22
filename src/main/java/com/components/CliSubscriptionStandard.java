@@ -1,4 +1,4 @@
-package com.objects;
+package com.components;
 
 import org.springframework.stereotype.Component;
 

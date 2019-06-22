@@ -1,36 +1,71 @@
 package com.pricing;
 
-import java.util.Calendar;
+import org.springframework.stereotype.Component;
 
+import com.entity.Client;
 import com.entity.Product;
 import com.entity.PurchaseOrder;
 
 /**
  * 
- * Class used to calculate product pricing factor, used to calculate final proce for product
- *  @in progress
+ * Class used to calculate product pricing, used to calculate price component for product
  *
  */
 
-public class ProductPricing {
+@Component("ProductPricingImp")
+public class ProductPricingImp implements ProductPricing {
 	
-	private Calendar today = Calendar.getInstance();
 	
-	public ProductPricing(){
-		today.set(Calendar.HOUR_OF_DAY, 0); // same for minutes and seconds		
+	public ProductPricingImp(){
+	
 	}
 	
-	public double getPriceFactor(Product product, PurchaseOrder purchaseOrder) {
+	@Override
+	public double getPurchaseOrderPriceFactor(Product product, PurchaseOrder purchaseOrder) {
 		
+		int priceFactor = 0;
 		
-		if(purchaseOrder.getOrderDate() == null) {
-			return 1;
-		}else {
-			return 1;
+		if(purchaseOrder.getOrderValue()>2000) {
+			priceFactor += 10;
+		}else if (purchaseOrder.getOrderValue()>1000) {
+			priceFactor += 5;
+		}else if (purchaseOrder.getOrderValue()>700) {
+			priceFactor += 2;
 		}
 		
+		return priceFactor/100;
+			
+	}
+	
+	// Returns double representing Client's percentage discount
+	@Override
+	public double getClientPriceDiscount(Client client){
 		
+		int percentageDiscount = 0;
 		
+		// Incrementing discount percentage depending on how many points Client has
+		if (client.getPoints() > 300) {
+			percentageDiscount += 6;
+		} else if (client.getPoints() > 200) {
+			percentageDiscount += 4;
+		} else if (client.getPoints() > 100) {
+			percentageDiscount += 2;
+		}
+		
+		// Incrementing discount percentage depending on how many products Client has
+		// bought
+		if (client.getPurchaseOrders().isEmpty() == false) {
+			if (client.getPurchaseOrders().size() > 50) {
+				percentageDiscount += 12;
+			} else if (client.getPurchaseOrders().size() > 20) {
+				percentageDiscount += 6;
+			} else if (client.getPurchaseOrders().size() > 10) {
+				percentageDiscount += 3;
+			}
+
+		}
+		
+		return percentageDiscount/100;
 	}
 
 }

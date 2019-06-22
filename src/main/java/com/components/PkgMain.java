@@ -1,4 +1,4 @@
-package com.objects;
+package com.components;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -8,10 +8,11 @@ import java.util.Set;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Working class for testing purposes, left for reference *
+ * PackageMain Class
+ * Working class for testing purposes, left for reference
  */
 
-public class MainRun {
+public class PkgMain {
 	
 	public static void main (String[] args) {
 		
@@ -33,9 +34,9 @@ public class MainRun {
 		System.out.println(stat);
 	      
 	      // Deposit 1000 into Zara's account
-	      //double balance = ((Double)hm.get("Zara")).doubleValue();
-	      //hm.put("Zara", new Double(balance + 1000));
-	      //System.out.println("Zara's new balance: " + hm.get("Zara"));
+	      // double balance = ((Double)hm.get("Zara")).doubleValue();
+	      // hm.put("Zara", new Double(balance + 1000));
+	      // System.out.println("Zara's new balance: " + hm.get("Zara"));
 		
 	}
 
