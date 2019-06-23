@@ -156,11 +156,11 @@ public class ClientDAOImp implements ClientDAO {
  * @Controller - Spring MVC special class that will handle all MVC work, spring will handle auto components scannig
  * and load it automatically
  * 
- * @Repoitory - all DAO implementation classes, this will be available for component scanning
+ * @Repository - all DAO implementation classes, this will be available for component scanning
  * Spring will automatically register the DAO implementation thanks to component scanning
  * Spring will also provide translation of any JDBC related exceptions
  * 
- * @Transactional on given method thanks to which we dont have to manually start and stop session
+ * @Transactional on given method, no need to manually start and stop session
  * */
 
 /*

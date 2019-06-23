@@ -1,20 +1,17 @@
 package com.controllers;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Objects;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dao.ClientDAO;
-import com.entity.Client;
 import com.service.ClientService;
 
 /**
@@ -29,13 +26,15 @@ import com.service.ClientService;
 @RequestMapping("/app")
 public class MainController {
 	
-
+	private static final Logger logger = Logger.getLogger(MainController.class.getName());
+	
 	// Injection of Client Service
 	@Autowired
 	private ClientService clientService;
 	
 	@GetMapping("/welcome")
 	public String welcomeView (Model theModel) {
+		logger.info("App Welcome screen has been accessed.");	
 		
 		return "welcome";
 	}
@@ -69,6 +68,7 @@ public class MainController {
 	
 	@GetMapping("/goodbye")
 	public String goodyeView (Model theModel) {
+		logger.info("User has logged out.");
 		return "goodbye";
 	}
 	
