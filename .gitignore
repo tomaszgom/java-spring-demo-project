@@ -5,6 +5,8 @@
 *.war
 *.ear
 
+log/
+
 bin/
 target/
 build/
