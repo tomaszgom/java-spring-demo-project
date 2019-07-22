@@ -17,7 +17,7 @@ public class DbConnection {
 	public void LoadJDBCDriver() {		
 		try {
 			logger.info("Attempting to load HSQLDB JDBC driver.");
-			Class.forName(ReaderMain.properties.getProperty("hsqldbJDBCDriver"));
+//			Class.forName(ReaderMain.properties.getProperty("hsqldbJDBCDriver"));
 		} catch (Exception e) {
 			logger.debug("Failed to load HSQLDB JDBC driver.", e);
 		}		
@@ -35,7 +35,7 @@ public class DbConnection {
 		// Create DB and table if does not exist		
 		try {	
 			logger.info("Attempting to connect to database and execute create table query.");
-			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");
+//			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");
     		conn.createStatement().executeQuery(createTable);   					   			       
 		}catch (SQLException e) {
 			logger.debug("SQL Exception failed.", e);
@@ -54,7 +54,7 @@ public class DbConnection {
 		
 		try {
 			logger.info("Attempting to connect to database and execute insert query.");
-			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");		   			
+//			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");		   			
 			String query = "INSERT INTO event (id, duration, Type, Host, alert) VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement insertStmnt = conn.prepareStatement(query);    
 		   					

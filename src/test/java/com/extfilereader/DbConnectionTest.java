@@ -16,7 +16,6 @@ import org.junit.Test;
 import com.extfilereader.DbConnection;
 import com.extfilereader.Event;
 import com.extfilereader.EventEntry;
-import com.extfilereader.ReaderMain;
 
 public class DbConnectionTest {
 
@@ -32,7 +31,7 @@ public class DbConnectionTest {
 	
 	@BeforeClass
 	public static void LoadAppProperties() {	
-		ReaderMain.LoadAppProperties();
+//		ReaderMain.LoadAppProperties();
 	}
 		
 	@BeforeClass
@@ -75,7 +74,7 @@ public class DbConnectionTest {
         dbConnection.CreateEventTable();
 		
 		try {		
-			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");
+//			conn = DriverManager.getConnection(ReaderMain.properties.getProperty("dbConnectionString"), "SA", "");
     		    		
 			PreparedStatement prepStmnt = conn.prepareStatement("select * from event where ID='" + testRecId+"'");
 			prepStmnt.clearParameters();
