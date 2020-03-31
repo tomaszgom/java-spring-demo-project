@@ -26,7 +26,6 @@ Technologies used and some of the concepts deployed:
 - Bean Scopes and Life-cycle Methods
 - DAO (Data Access Object)
 - Service Layer between Controller and DAO (Facade Design pattern) (Intermediate layer for business logic, can be used to integrate data with multiple sources)
-- Spring Boot (coming soon)
 - AOP (Aspect Oriented Programming) (coming soon)
 
 
